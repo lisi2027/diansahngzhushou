@@ -34,11 +34,14 @@ def get_public_url():
     """
     获取对外可访问的URL地址
     优先使用环境变量 PUBLIC_HOST（可在Dify中配置）
+    Render 部署时使用 RENDER_EXTERNAL_HOSTNAME
     """
     env_host = os.environ.get('PUBLIC_HOST', '').strip()
     if env_host:
         return env_host
-    # 默认使用本机IP
+    render_host = os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip()
+    if render_host:
+        return render_host
     return get_local_ip()
 
 
@@ -87,7 +90,10 @@ def generate_html_report():
         print(f"✅ 文件已保存: {file_path}")
 
         # 🔥 生成访问链接 - 使用对外可访问的地址
-        preview_url = f"http://{PUBLIC_HOST}:5000/view/{file_name}"
+        if 'render.com' in PUBLIC_HOST:
+            preview_url = f"https://{PUBLIC_HOST}/view/{file_name}"
+        else:
+            preview_url = f"http://{PUBLIC_HOST}:5000/view/{file_name}"
 
         response = jsonify({
             "success": True,
@@ -127,10 +133,14 @@ def list_reports():
         files_info = []
         for f in html_files[:20]:
             file_path = os.path.join(DATA_DIR, f)
+            if 'render.com' in PUBLIC_HOST:
+                url = f"https://{PUBLIC_HOST}/view/{f}"
+            else:
+                url = f"http://{PUBLIC_HOST}:5000/view/{f}"
             files_info.append({
                 "name": f,
                 "size": os.path.getsize(file_path),
-                "url": f"http://{PUBLIC_HOST}:5000/view/{f}"
+                "url": url
             })
 
         response = jsonify({"reports": files_info, "count": len(files_info)})
@@ -176,7 +186,7 @@ def index():
         </ul>
         <hr>
         <p>📌 本机服务地址: http://{LOCAL_IP}:5000</p>
-        <p>📌 对外访问地址: http://{PUBLIC_HOST}:5000</p>
+        <p>📌 对外访问地址: {'https://' + PUBLIC_HOST if 'render.com' in PUBLIC_HOST else 'http://' + PUBLIC_HOST + ':5000'}</p>
         <p>📌 测试接口: <a href="/ping">/ping</a></p>
     </body>
     </html>
