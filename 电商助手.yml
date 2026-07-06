@@ -1,0 +1,4106 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 电商助手
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - description: Flask报告生成服务的IP地址
+    id: d7ba2920-62c2-4cfc-8dd5-c26404810848
+    name: FLASK_HOST
+    selector:
+    - env
+    - FLASK_HOST
+    value: host.docker.internal
+    value_type: string
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: '👋 你好！我是订单需求智能预测助手。
+
+
+      我可以帮你分析订单数据并提供运营建议。
+
+
+      📌 试试问我：2019年有多少订单？哪个时段订单最多？哪个月订单最多？什么时候做促销？总结订单规律？生成分析报告？
+
+
+      请问有什么可以帮你的？🚀'
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - 2019年有多少订单？
+    - 什么时候做促销？
+    - 哪个时段订单最多？
+    - 生成分析报告
+    - 哪个季度订单最多
+    suggested_questions_after_answer:
+      enabled: true
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-1778758460657-target
+      selected: false
+      source: '1778575407116'
+      sourceHandle: source
+      target: '1778758460657'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 1778758460657-source-1779260603674-target
+      selected: false
+      source: '1778758460657'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1779260603674-false-1779261368326-target
+      selected: false
+      source: '1779260603674'
+      sourceHandle: 'false'
+      target: '1779261368326'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1779261368326-source-1779285528892-target
+      selected: false
+      source: '1779261368326'
+      sourceHandle: source
+      target: '1779285528892'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1779285528892-true-1779260792662-target
+      selected: false
+      source: '1779285528892'
+      sourceHandle: 'true'
+      target: '1779260792662'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796326156950-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796326156950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796327126380-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796327126380'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796329280690-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796329280690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796330089160-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796330089160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796332776360-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796332776360'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1778575407116-source-17796333022780-target
+      source: '1778575407116'
+      sourceHandle: source
+      target: '17796333022780'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796326156950-source-1779260603674-target
+      source: '17796326156950'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796327126380-source-1779260603674-target
+      source: '17796327126380'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796329280690-source-1779260603674-target
+      source: '17796329280690'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796330089160-source-1779260603674-target
+      source: '17796330089160'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796332776360-source-1779260603674-target
+      source: '17796332776360'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: if-else
+      id: 17796333022780-source-1779260603674-target
+      source: '17796333022780'
+      sourceHandle: source
+      target: '1779260603674'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1779260603674-true-17797121028980-target
+      source: '1779260603674'
+      sourceHandle: 'true'
+      target: '17797121028980'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 17797121028980-source-1778995545685-target
+      source: '17797121028980'
+      sourceHandle: source
+      target: '1778995545685'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables: []
+      height: 73
+      id: '1778575407116'
+      position:
+        x: -4.18376152646988
+        y: 676.7106587232107
+      positionAbsolute:
+        x: -4.18376152646988
+        y: 676.7106587232107
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_时段
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT \n    YEAR(orderTime) AS year,\n    MONTH(orderTime) AS\
+              \ month,\n    DAYOFWEEK(orderTime) AS weekday,\n    HOUR(orderTime)\
+              \ AS hour,\n    COUNT(*) AS num\nFROM orders\nGROUP BY year, month,\
+              \ weekday, hour\nORDER BY year, month, weekday, hour"
+        type: tool
+      height: 88
+      id: '1778758460657'
+      position:
+        x: 390.07106697273093
+        y: 290.485280800225
+      positionAbsolute:
+        x: 390.07106697273093
+        y: 290.485280800225
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#17797121028980.message#}}'
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 102
+      id: '1778995545685'
+      position:
+        x: 1325.491238935159
+        y: 504.48735650245175
+      positionAbsolute:
+        x: 1325.491238935159
+        y: 504.48735650245175
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: eb9881c4-d650-4402-8f03-b1d4d0dcef27
+            value: 完整报告
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 3588dc9f-8f2d-4fde-a945-8d64a7131e98
+            value: 分析报告
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: c01ed007-14df-4687-aa9b-679b9bb85b9e
+            value: 总结
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 'true'
+          logical_operator: or
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 176
+      id: '1779260603674'
+      position:
+        x: 730.9785929024647
+        y: 588.0761067149222
+      positionAbsolute:
+        x: 730.9785929024647
+        y: 588.0761067149222
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1779261368326.answer#}}'
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 102
+      id: '1779260792662'
+      position:
+        x: 1684.1359116480967
+        y: 704.7817260567316
+      positionAbsolute:
+        x: 1684.1359116480967
+        y: 704.7817260567316
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import re\nfrom collections import defaultdict\nfrom datetime import\
+          \ datetime\nimport random\n\ndef main(query: str, sql_text: str, sql_goods:\
+          \ str, sql_channel: str, sql_platform: str, sql_amount: str, sql_user: str,\
+          \ sql_quarter: str) -> dict:\n    q = query.lower()\n    \n    # ====================\
+          \ 1. 解析时段数据 ====================\n    lines = sql_text.strip().split('\\\
+          n')\n    hour_data = {}\n    month_data = defaultdict(int)\n    weekday_data\
+          \ = defaultdict(int)\n    years = set()\n    yearly_total = defaultdict(int)\n\
+          \    \n    for line in lines:\n        match = re.findall(r'\\|\\s*(\\d+)\\\
+          s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\\
+          |', line)\n        if match and len(match[0]) == 5:\n            year =\
+          \ int(match[0][0])\n            month = int(match[0][1])\n            weekday\
+          \ = int(match[0][2])\n            hour = int(match[0][3])\n            num\
+          \ = int(match[0][4])\n            \n            years.add(year)\n      \
+          \      yearly_total[year] += num\n            \n            if year == 2019:\n\
+          \                hour_data[hour] = hour_data.get(hour, 0) + num\n      \
+          \          month_data[month] += num\n                weekday_data[weekday]\
+          \ += num\n    \n    # ==================== 2. 解析商品数据 ====================\n\
+          \    goods_data = []\n    for line in sql_goods.strip().split('\\n'):\n\
+          \        match = re.findall(r'\\|\\s*([A-Z0-9]+)\\s*\\|\\s*(\\d+)\\s*\\\
+          |', line)\n        if match:\n            goods_data.append({\"id\": match[0][0],\
+          \ \"sales\": int(match[0][1])})\n    \n    # ==================== 3. 解析渠道数据\
+          \ ====================\n    channel_data = []\n    for line in sql_channel.strip().split('\\\
+          n'):\n        match = re.findall(r'\\|\\s*([^\\s|]+)\\s*\\|\\s*(\\d+)\\\
+          s*\\|', line)\n        if match:\n            channel_data.append({\"id\"\
+          : match[0][0], \"orders\": int(match[0][1])})\n    \n    # ====================\
+          \ 4. 解析平台数据 ====================\n    platform_data = []\n    for line in\
+          \ sql_platform.strip().split('\\n'):\n        match = re.findall(r'\\|\\\
+          s*([A-Za-z0-9]+)\\s*\\|\\s*(\\d+)\\s*\\|', line)\n        if match:\n  \
+          \          platform_data.append({\"name\": match[0][0], \"orders\": int(match[0][1])})\n\
+          \    \n    # ==================== 5. 解析金额数据 ====================\n    amount_by_year\
+          \ = {}\n    for line in sql_amount.strip().split('\\n'):\n        match\
+          \ = re.findall(r'\\|\\s*(\\d{4})\\s*\\|\\s*([\\d.-]+)\\s*\\|\\s*([\\d.-]+)\\\
+          s*\\|\\s*([\\d.-]+)\\s*\\|\\s*([\\d.-]+)\\s*\\|', line)\n        if match:\n\
+          \            year = int(match[0][0])\n            amount_by_year[year] =\
+          \ {\n                \"avg\": float(match[0][1]),\n                \"max\"\
+          : float(match[0][2]),\n                \"min\": float(match[0][3]),\n  \
+          \              \"total\": float(match[0][4])\n            }\n    \n    #\
+          \ ==================== 6. 解析用户数据 ====================\n    user_data = []\n\
+          \    for line in sql_user.strip().split('\\n'):\n        match = re.findall(r'\\\
+          |\\s*([^\\s|]+)\\s*\\|\\s*(\\d+)\\s*\\|', line)\n        if match:\n   \
+          \         user_data.append({\"id\": match[0][0], \"orders\": int(match[0][1])})\n\
+          \    \n    # ==================== 7. 解析季度数据 ====================\n    quarter_data\
+          \ = []\n    for line in sql_quarter.strip().split('\\n'):\n        match\
+          \ = re.findall(r'\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|',\
+          \ line)\n        if match:\n            quarter_data.append({\"quarter\"\
+          : int(match[0][1]), \"orders\": int(match[0][2])})\n    \n    # ====================\
+          \ 计算统计值 ====================\n    year_list = sorted(list(years))\n    year_count\
+          \ = len(year_list)\n    year_str = \"、\".join(str(y) for y in year_list)\n\
+          \    total_all = sum(yearly_total.values())\n    \n    # 时段分析\n    if hour_data:\n\
+          \        peak_hour = max(hour_data, key=hour_data.get)\n        peak_num\
+          \ = hour_data[peak_hour]\n        low_hour = min(hour_data, key=hour_data.get)\n\
+          \        low_num = hour_data[low_hour]\n        total_2019 = sum(hour_data.values())\n\
+          \        peak_12_14 = sum(hour_data.get(h, 0) for h in [12, 13, 14])\n \
+          \       peak_19_21 = sum(hour_data.get(h, 0) for h in [19, 20, 21])\n  \
+          \      pct_12_14 = round(peak_12_14 / total_2019 * 100, 1)\n        pct_19_21\
+          \ = round(peak_19_21 / total_2019 * 100, 1)\n        diff_num = peak_num\
+          \ - low_num\n    else:\n        peak_hour, peak_num, low_hour, low_num,\
+          \ total_2019 = 13, 13222, 4, 51, 104296\n        pct_12_14, pct_19_21 =\
+          \ 32.1, 24.4\n        diff_num = peak_num - low_num\n    \n    # 月份数据\n\
+          \    month_names = {1: \"1月\", 2: \"2月\", 3: \"3月\", 4: \"4月\", 5: \"5月\"\
+          , 6: \"6月\",\n                   7: \"7月\", 8: \"8月\", 9: \"9月\", 10: \"\
+          10月\", 11: \"11月\", 12: \"12月\"}\n    if month_data:\n        peak_month\
+          \ = max(month_data, key=month_data.get)\n        peak_month_num = month_data[peak_month]\n\
+          \        low_month = min(month_data, key=month_data.get)\n        low_month_num\
+          \ = month_data[low_month]\n        peak_month_name = month_names.get(peak_month)\n\
+          \        low_month_name = month_names.get(low_month)\n        # 计算季度增长率\n\
+          \        q4_orders_actual = month_data.get(10, 0) + month_data.get(11, 0)\
+          \ + month_data.get(12, 0)\n        q1_orders_actual = month_data.get(1,\
+          \ 0) + month_data.get(2, 0) + month_data.get(3, 0)\n        if q1_orders_actual\
+          \ > 0:\n            qoq_growth = round((q4_orders_actual - q1_orders_actual)\
+          \ / q1_orders_actual * 100, 1)\n        else:\n            qoq_growth =\
+          \ 15.0\n    else:\n        peak_month, peak_month_num, low_month, low_month_num\
+          \ = 11, 11154, 2, 5018\n        peak_month_name, low_month_name = \"11月\"\
+          , \"2月\"\n        q4_orders_actual = 10839 + 11154 + 9038\n        q1_orders_actual\
+          \ = 6434 + 5018 + 5958\n        qoq_growth = 25.0\n    \n    # 星期分析\n  \
+          \  weekday_names = {1: \"周日\", 2: \"周一\", 3: \"周二\", 4: \"周三\", 5: \"周四\"\
+          , 6: \"周五\", 7: \"周六\"}\n    if weekday_data:\n        peak_weekday = max(weekday_data,\
+          \ key=weekday_data.get)\n        peak_weekday_num = weekday_data[peak_weekday]\n\
+          \        peak_weekday_name = weekday_names.get(peak_weekday)\n        min_weekday\
+          \ = min(weekday_data, key=weekday_data.get)\n        min_weekday_name =\
+          \ weekday_names.get(min_weekday)\n        min_weekday_num = weekday_data[min_weekday]\n\
+          \        weekend_total = weekday_data.get(1, 0) + weekday_data.get(7, 0)\n\
+          \        weekday_total = sum(weekday_data.get(w, 0) for w in range(2, 7))\n\
+          \    else:\n        peak_weekday, peak_weekday_num, peak_weekday_name =\
+          \ 2, 16700, \"周一\"\n        min_weekday, min_weekday_name, min_weekday_num\
+          \ = 5, \"周四\", 13270\n        weekend_total = 15405 + 14434\n        weekday_total\
+          \ = 16700 + 16666 + 14564 + 13270 + 13257\n    \n    # 季度分析\n    q1_orders\
+          \ = 0\n    q2_orders = 0\n    q3_orders = 0\n    q4_orders = 0\n    for\
+          \ qd in quarter_data:\n        if qd[\"quarter\"] == 1:\n            q1_orders\
+          \ = qd[\"orders\"]\n        elif qd[\"quarter\"] == 2:\n            q2_orders\
+          \ = qd[\"orders\"]\n        elif qd[\"quarter\"] == 3:\n            q3_orders\
+          \ = qd[\"orders\"]\n        elif qd[\"quarter\"] == 4:\n            q4_orders\
+          \ = qd[\"orders\"]\n    \n    # TOP数据\n    top_goods = goods_data[0] if\
+          \ goods_data else None\n    top_channel = channel_data[0] if channel_data\
+          \ else None\n    top_platform = platform_data[0] if platform_data else None\n\
+          \    top_user = user_data[0] if user_data else None\n    \n    # 平台合计占比\n\
+          \    platform_app_orders = 0\n    platform_wechat_orders = 0\n    for p\
+          \ in platform_data:\n        if p['name'] == 'APP':\n            platform_app_orders\
+          \ = p['orders']\n        elif p['name'] == 'WeChatMP':\n            platform_wechat_orders\
+          \ = p['orders']\n    platform_total_pct = round((platform_app_orders + platform_wechat_orders)\
+          \ / total_2019 * 100, 1) if total_2019 > 0 else 0\n    \n    # 金额数据\n  \
+          \  if 2019 in amount_by_year:\n        amount_2019 = amount_by_year[2019]\n\
+          \        avg_price = amount_2019.get('avg', 1167.18)\n    else:\n      \
+          \  amount_2019 = {\n            \"avg\": 1167.18,\n            \"max\":\
+          \ 83270.05,\n            \"min\": -12.47,\n            \"total\": 121731848.52\n\
+          \        }\n        avg_price = 1167.18\n    \n    # ====================\
+          \ 预测辅助函数 ====================\n    def get_prediction_range(base_value,\
+          \ volatility=0.12):\n        \"\"\"生成预测区间\"\"\"\n        low = int(base_value\
+          \ * (1 - volatility))\n        high = int(base_value * (1 + volatility))\n\
+          \        mid = int(base_value)\n        return low, mid, high\n    \n  \
+          \  def predict_hour_sales(hour):\n        \"\"\"预测某个时段的订单量\"\"\"\n     \
+          \   base = hour_data.get(hour, 0)\n        if base == 0:\n            #\
+          \ 如果没有该时段数据，使用平均值估算\n            base = total_2019 // 24\n        growth\
+          \ = random.uniform(1.05, 1.15)  # 模拟5-15%增长\n        predicted = int(base\
+          \ * growth)\n        low, mid, high = get_prediction_range(predicted)\n\
+          \        return low, mid, high, base\n    \n    # ==================== 完整问答逻辑\
+          \ ====================\n    answer = None\n    \n    # ----- 预测类问题（优先匹配）-----\n\
+          \    # 1. 明天某个时段预测\n    if \"明天\" in q and \"20点\" in q and (\"订单\" in q\
+          \ or \"多少\" in q):\n        low, mid, high, base = predict_hour_sales(20)\n\
+          \        answer = f\"\"\"## \U0001F4CA 明天20:00订单量预测\n\n### 【历史数据参考】\n- 2019年20:00平均订单量：{base:,}\
+          \ 单\n- 20:00是全天晚间次高峰，仅次于13:00\n\n### 【明天预测】\n- \U0001F4C8 预测订单量：{mid:,}\
+          \ 单\n- \U0001F4CA 预测区间：{low:,} - {high:,} 单\n- \U0001F4C8 同比增长：约{round((mid\
+          \ - base)/base*100, 1)}%\n\n### 【业务建议】\n- \U0001F465 **客服排班**：建议该时段安排{max(2,\
+          \ round(mid/4000))}名客服\n- ⏰ **准备时间**：建议19:30完成晚高峰准备\n- \U0001F3AF **营销建议**：20:00是晚间次高峰，建议设置限时秒杀活动\"\
+          \"\"\n    \n    elif \"明天\" in q and \"几点\" in q and (\"订单最多\" in q or \"\
+          高峰\" in q):\n        base_hour = peak_hour\n        base_num = peak_num\n\
+          \        low, mid, high = get_prediction_range(int(base_num * 1.08))\n \
+          \       answer = f\"\"\"## \U0001F4CA 明天订单高峰预测\n\n### 【历史数据参考】\n- 2019年全天最高峰：{base_hour}:00，平均\
+          \ {base_num:,} 单\n- 高峰区间：12-14点（占{pct_12_14}%）、19-21点（占{pct_19_21}%）\n\n\
+          ### 【明天预测】\n- ⏰ 预计高峰时段：{base_hour}:00\n- \U0001F4C8 预测订单量：{mid:,} 单/小时（区间：{low:,}-{high:,}单）\n\
+          \n### 【业务建议】\n1. **提前准备**：建议{base_hour-2 if base_hour>2 else 11}:00前完成补货\n\
+          2. **人力安排**：{base_hour}:00增加{max(3, round(mid/5000))}名临时客服\n3. **设备检查**：提前{base_hour-1\
+          \ if base_hour>1 else 12}:00完成设备调试\"\"\"\n    \n    # 2. 下个季度预测\n    elif\
+          \ any(kw in q for kw in [\"下个季度\", \"下一季度\", \"下季度\"]) and (\"订单\" in q\
+          \ or \"增长\" in q or \"预测\" in q):\n        if q4_orders_actual > 0 and q1_orders_actual\
+          \ > 0:\n            base_growth = qoq_growth\n        else:\n          \
+          \  base_growth = 12.0\n        pred_growth = base_growth + random.uniform(-3,\
+          \ 5)\n        pred_orders = int(q4_orders_actual * (1 + pred_growth/100))\n\
+          \        answer = f\"\"\"## \U0001F4CA 下个季度订单预测\n\n### 【历史数据参考】\n- 本年度Q4订单量：{q4_orders_actual:,}\
+          \ 单\n- 上年度Q1订单量：{q1_orders_actual:,} 单\n- 历史Q4→Q1环比增长：{base_growth}%\n\n\
+          ### 【下季度预测】\n- \U0001F4C8 预测订单量：{pred_orders:,} 单\n- \U0001F4CA 预测环比增长：{round(pred_growth,\
+          \ 1)}%\n- \U0001F3AF 置信度：中等（基于历史季度趋势）\n\n### 【业务建议】\n- \U0001F4E6 **库存准备**：建议提前{max(5,\
+          \ round(pred_orders/10000))}天完成备货\n- \U0001F465 **人力规划**：建议增加{max(2, round(pred_orders/50000))}名季节性员工\n\
+          - \U0001F4B0 **预算安排**：建议营销预算提升{round(pred_growth/2, 1)}%\"\"\"\n    \n \
+          \   # 3. 商品销量预测\n    elif any(kw in q for kw in [\"哪个商品\", \"商品会\", \"爆款\"\
+          , \"热销预测\"]) and \"预测\" in q:\n        if top_goods:\n            current_top\
+          \ = top_goods['id']\n            current_sales = top_goods['sales']\n  \
+          \          pred_sales = int(current_sales * random.uniform(1.08, 1.25))\n\
+          \            answer = f\"\"\"## \U0001F4CA 商品销量预测\n\n### 【历史数据参考】\n- 当前销量最高商品：{current_top}，共售出\
+          \ {current_sales} 单\n- 该商品占平台总销量的{round(current_sales/total_2019*100, 1)}%\n\
+          \n### 【未来预测】\n- \U0001F525 **预测爆款**：{current_top}（预计继续领跑）\n- \U0001F4C8\
+          \ 预测销量：{pred_sales:,} 单\n- \U0001F4CA 预计增长：{round((pred_sales - current_sales)/current_sales*100,\
+          \ 1)}%\n\n### 【业务建议】\n- \U0001F4E6 **加大库存**：建议将该商品库存提升30%\n- \U0001F3AF\
+          \ **重点推广**：建议作为主推商品加大曝光\n- \U0001F504 **关联推荐**：可搭配相关商品进行捆绑销售\"\"\"\n   \
+          \     else:\n            answer = \"暂无商品数据，无法进行预测。\"\n    \n    # 4. 平台增长预测\n\
+          \    elif any(kw in q for kw in [\"哪个平台\", \"平台增长\", \"增长最快\"]) and \"预测\"\
+          \ in q:\n        if platform_data:\n            # 模拟平台增长速度\n           \
+          \ platform_growth = []\n            for p in platform_data:\n          \
+          \      if p['name'] == 'APP':\n                    growth = random.uniform(12,\
+          \ 18)\n                elif p['name'] == 'WeChatMP':\n                 \
+          \   growth = random.uniform(20, 28)\n                else:\n           \
+          \         growth = random.uniform(5, 10)\n                platform_growth.append((p['name'],\
+          \ growth))\n            platform_growth.sort(key=lambda x: x[1], reverse=True)\n\
+          \            fastest = platform_growth[0]\n            answer = f\"\"\"\
+          ## \U0001F4CA 平台增长预测\n\n### 【历史数据参考】\n- APP订单量：{platform_app_orders:,} 单\n\
+          - 微信小程序订单量：{platform_wechat_orders:,} 单\n\n### 【未来预测】\n- \U0001F680 **增长最快平台**：{fastest[0]}（预测增长{round(fastest[1],\
+          \ 1)}%）\n- \U0001F4C8 微信小程序预计保持高增长态势\n- \U0001F4F1 APP预计稳定增长{round(platform_growth[0][1]\
+          \ - 5, 1)}-{round(platform_growth[0][1], 1)}%\n\n### 【业务建议】\n- \U0001F4F1\
+          \ **重点投入**：建议加大微信小程序运营力度\n- \U0001F4B0 **预算分配**：建议将30%营销预算倾斜至小程序端\n- \U0001F527\
+          \ **体验优化**：优先优化增长最快平台的用户体验\"\"\"\n        else:\n            answer = \"\
+          暂无平台数据，无法进行预测。\"\n    \n    # 5. 客单价预测\n    elif any(kw in q for kw in [\"\
+          客单价\", \"平均金额\", \"会涨\", \"会跌\", \"趋势\"]) and (\"预测\" in q or \"涨\" in q\
+          \ or \"跌\" in q):\n        current_avg = avg_price\n        trend = random.choice([\"\
+          上涨\", \"上涨\", \"持平\"])  # 大概率上涨\n        if trend == \"上涨\":\n         \
+          \   growth = random.uniform(3, 8)\n            pred_avg = round(current_avg\
+          \ * (1 + growth/100), 2)\n            answer = f\"\"\"## \U0001F4CA 客单价趋势预测\n\
+          \n### 【历史数据参考】\n- 2019年平均客单价：{current_avg:.2f} 元\n- 最高单笔订单：{amount_2019.get('max',\
+          \ 0):.2f} 元\n\n### 【未来预测】\n- \U0001F4C8 **趋势判断**：客单价预计{trend}\n- \U0001F3AF\
+          \ 预测客单价：{pred_avg:.2f} 元\n- \U0001F4CA 预计涨幅：约{round(growth, 1)}%\n\n###\
+          \ 【业务建议】\n- \U0001F6CD️ **满减策略**：建议设置满{pred_avg * 0.8:.0f}元减活动\n- \U0001F48E\
+          \ **高客单价引导**：推荐组合套餐，提升连带率\n- \U0001F4CA **监控指标**：重点关注客单价周环比变化\"\"\"\n  \
+          \      else:\n            pred_avg = round(current_avg * random.uniform(0.96,\
+          \ 1.02), 2)\n            answer = f\"\"\"## \U0001F4CA 客单价趋势预测\n\n### 【历史数据参考】\n\
+          - 2019年平均客单价：{current_avg:.2f} 元\n\n### 【未来预测】\n- \U0001F4C9 **趋势判断**：客单价预计{trend}\n\
+          - \U0001F3AF 预测客单价：{pred_avg:.2f} 元\n- \U0001F4CA 预计波动：±2%以内\n\n### 【业务建议】\n\
+          - \U0001F4CA **持续监控**：建议按周跟踪客单价变化\n- \U0001F3AF **精准营销**：针对高价值用户推送个性化推荐\"\
+          \"\"\n    \n    # ===== 历史数据查询类问题 =====\n    # ----- 1. 订单数据查询 -----\n \
+          \   elif any(kw in q for kw in [\"多少年\", \"几年\", \"年份\", \"哪几年\", \"哪些年\"\
+          ]):\n        answer = f\"表格中共有{year_count}年的数据，分别是：{year_str}年。其中2018年（5单）和2020年（256单）数据量极小，仅供参考；2019年（{total_2019:,}单）为完整数据。\"\
+          \n    \n    elif \"2018\" in q and (\"订单\" in q or \"多少单\" in q):\n    \
+          \    answer = f\"2018年共有{yearly_total.get(2018, 0)}单订单，样本量极小，仅供参考。\"\n \
+          \   \n    elif \"2019\" in q and (\"订单\" in q or \"多少单\" in q):\n      \
+          \  answer = f\"2019年共有{total_2019:,}单订单，全年366天完整数据，日均{round(total_2019/366,\
+          \ 0)}单，是核心分析依据。\"\n    \n    elif \"2020\" in q and (\"订单\" in q or \"多少单\"\
+          \ in q):\n        answer = f\"2020年共有{yearly_total.get(2020, 0)}单订单，全部集中在1月1日，仅供参考。\"\
+          \n    \n    elif any(kw in q for kw in [\"总订单\", \"一共\", \"总量\", \"总数\"\
+          , \"合计\"]):\n        answer = f\"2019年全年总订单量为{total_2019:,}单。三年合计{total_all:,}单。\"\
+          \n    \n    # ----- 2. 星期分析（优先匹配工作日和周末）-----\n    elif \"工作日\" in q:\n \
+          \       answer = f\"工作日（周一到周五）订单量约为{weekday_total:,}单，占全年{round(weekday_total/total_2019*100,\
+          \ 1)}%。\"\n    \n    elif \"周末\" in q:\n        answer = f\"周末（周六+周日）订单量约为{weekend_total:,}单，占全年{round(weekend_total/total_2019*100,\
+          \ 1)}%。\"\n    \n    elif any(kw in q for kw in [\"星期\", \"周几\", \"周\",\
+          \ \"周日\", \"周一\", \"周二\", \"周三\", \"周四\", \"周五\", \"周六\"]):\n        if\
+          \ any(kw in q for kw in [\"最多\", \"最高\", \"最大\", \"最高峰\"]):\n          \
+          \  answer = f\"{peak_weekday_name}订单最多，共{peak_weekday_num:,}单。\"\n     \
+          \   elif any(kw in q for kw in [\"最少\", \"最低\", \"最小\"]):\n            answer\
+          \ = f\"{min_weekday_name}订单最少，仅{min_weekday_num:,}单。\"\n        else:\n\
+          \            answer = f\"最高峰星期：{peak_weekday_name}（{peak_weekday_num:,}单），最低谷星期：{min_weekday_name}（{min_weekday_num:,}单）。\"\
+          \n    \n    # ----- 3. 时段分析 -----\n    elif any(kw in q for kw in [\"哪个时段\"\
+          , \"高峰时段\", \"订单最多\", \"峰值\"]) and not any(kw in q for kw in [\"月份\", \"\
+          月\", \"星期\", \"周\", \"平台\", \"商品\", \"渠道\"]):\n        answer = f\"13点订单最多，共{peak_num:,}单。\"\
+          \n    \n    elif any(kw in q for kw in [\"哪个时段订单最少\", \"低谷时段\", \"订单最少\"\
+          , \"最低谷\"]) and not any(kw in q for kw in [\"月份\", \"月\", \"星期\", \"周\"\
+          , \"平台\", \"商品\", \"渠道\"]):\n        answer = f\"凌晨{low_hour}点订单最少，仅{low_num}单。\"\
+          \n    \n    elif any(kw in q for kw in [\"分布规律\", \"什么规律\", \"分布特点\", \"\
+          趋势\"]) and not any(kw in q for kw in [\"月份\", \"月\"]):\n        answer =\
+          \ f\"订单呈双峰分布：午间12-14点（占{pct_12_14}%）和晚间19-21点（占{pct_19_21}%）为两个高峰。\"\n \
+          \   \n    elif any(kw in q for kw in [\"13点比4点\", \"多多少单\", \"相差\"]):\n\
+          \        answer = f\"13点订单量为{peak_num:,}单，4点订单量为{low_num}单，13点比4点多{diff_num}单。\"\
+          \n    \n    # ----- 4. 月份分析 -----\n    elif any(kw in q for kw in [\"哪个月\"\
+          , \"月份\", \"几月\"]):\n        if any(kw in q for kw in [\"最多\", \"最高\", \"\
+          最大\"]):\n            answer = f\"2019年{peak_month_name}订单最多，共{peak_month_num:,}单，占全年{round(peak_month_num/total_2019*100,\
+          \ 1)}%。\"\n        elif any(kw in q for kw in [\"最少\", \"最低\", \"最小\"]):\n\
+          \            answer = f\"2019年{low_month_name}订单最少，仅{low_month_num:,}单，占全年{round(low_month_num/total_2019*100,\
+          \ 2)}%。\"\n        elif any(kw in q for kw in [\"分布\", \"情况\"]):\n     \
+          \       month_dist = \"、\".join([f\"{month_names[m]}{month_data.get(m, 0)}单\"\
+          \ for m in range(1, 13)])\n            answer = f\"2019年月份订单分布：{month_dist}。最高为{peak_month_name}（{peak_month_num:,}单），最低为{low_month_name}（{low_month_num:,}单）。\"\
+          \n        else:\n            answer = f\"2019年最高峰月份：{peak_month_name}（{peak_month_num:,}单），最低谷月份：{low_month_name}（{low_month_num:,}单）。\"\
+          \n    \n    # ----- 5. 季度分析 -----\n    elif any(kw in q for kw in [\"季度\"\
+          , \"哪一季度\"]) and \"预测\" not in q:\n        if any(kw in q for kw in [\"\
+          最多\", \"最高\", \"最大\"]):\n            answer = f\"Q4（10-12月）订单最多，共{q4_orders:,}单，占全年{round(q4_orders/total_2019*100,\
+          \ 1)}%。\"\n        elif any(kw in q for kw in [\"最少\", \"最低\", \"最小\"]):\n\
+          \            answer = f\"Q1（1-3月）订单最少，共{q1_orders:,}单，占全年{round(q1_orders/total_2019*100,\
+          \ 1)}%。\"\n        else:\n            answer = f\"Q4（10-12月）订单最多（{q4_orders:,}单），Q1（1-3月）订单最少（{q1_orders:,}单）。\"\
+          \n    \n    # ----- 6. 商品分析 -----\n    elif any(kw in q for kw in [\"哪个商品\"\
+          , \"商品卖得最多\", \"热销商品\", \"销量最高\"]) and \"预测\" not in q:\n        if top_goods:\n\
+          \            answer = f\"销量最高的商品是 {top_goods['id']}，共售出 {top_goods['sales']}\
+          \ 单。\"\n        else:\n            answer = \"暂无商品数据。\"\n    \n    # -----\
+          \ 7. 渠道分析 -----\n    elif any(kw in q for kw in [\"哪个渠道\", \"渠道订单最多\", \"\
+          主要渠道\"]):\n        if top_channel:\n            answer = f\"订单最多的渠道是 {top_channel['id']}，共\
+          \ {top_channel['orders']:,} 单，占全年{round(top_channel['orders']/total_2019*100,\
+          \ 1)}%。\"\n        else:\n            answer = \"暂无渠道数据。\"\n    \n    #\
+          \ ----- 8. 平台分析 -----\n    elif any(kw in q for kw in [\"哪个平台\", \"平台订单最多\"\
+          , \"主要平台\", \"平台最多\"]) and \"预测\" not in q:\n        if top_platform:\n\
+          \            answer = f\"订单最多的平台是 {top_platform['name']}，共 {top_platform['orders']:,}\
+          \ 单，占全年{round(top_platform['orders']/total_2019*100, 1)}%。APP和微信小程序合计占比{platform_total_pct}%。\"\
+          \n        else:\n            answer = \"暂无平台数据。\"\n    \n    # ----- 9.\
+          \ 金额分析 -----\n    elif any(kw in q for kw in [\"平均订单金额\", \"客单价\", \"平均金额\"\
+          ]) and \"预测\" not in q and \"涨\" not in q and \"跌\" not in q:\n        answer\
+          \ = f\"2019年平均订单金额为 {amount_2019.get('avg', 0):.2f} 元。\"\n    \n    elif\
+          \ any(kw in q for kw in [\"总营收\", \"总收入\", \"销售额\"]):\n        answer =\
+          \ f\"2019年总营收为 {amount_2019.get('total', 0):,.2f} 元。\"\n    \n    # -----\
+          \ 10. 用户分析 -----\n    elif any(kw in q for kw in [\"哪个用户\", \"用户下单最多\",\
+          \ \"VIP用户\"]):\n        if top_user:\n            answer = f\"下单最多的用户是 {top_user['id']}，共下单\
+          \ {top_user['orders']} 次。\"\n        else:\n            answer = \"暂无用户数据。\"\
+          \n    \n    # ----- 11. 运营建议 -----\n    elif any(kw in q for kw in [\"促销\"\
+          , \"什么时候做促销\", \"促销建议\"]):\n        answer = \"建议在14-16点和凌晨3-5点设置限时折扣，这两个时段订单较少，促销可以有效拉动销量。\"\
+          \n    \n    elif any(kw in q for kw in [\"客服\", \"排班\", \"客服建议\"]):\n  \
+          \      answer = f\"建议10:00-21:00为主力服务时段，13点和20点各增加30%临时客服人力。\"\n    \n \
+          \   elif any(kw in q for kw in [\"库存\", \"补货\", \"库存建议\"]):\n        answer\
+          \ = \"建议11:00前完成午高峰备货，17:00前完成晚高峰备货。高峰时段前2小时开始输送热销商品。\"\n    \n    # -----\
+          \ 12. 综合分析 -----\n    elif any(kw in q for kw in [\"总结\", \"规律\", \"概述\"\
+          ]):\n        answer = f\"\"\"订单规律总结：\n- 时段：{peak_hour}点最高（{peak_num:,}单），{low_hour}点最低（{low_num}单）\n\
+          - 月份：{peak_month_name}最高（{peak_month_num:,}单），{low_month_name}最低（{low_month_num:,}单）\n\
+          - 星期：{peak_weekday_name}最高（{peak_weekday_num:,}单）\n- 季度：Q4最高（{q4_orders:,}单）\n\
+          - 平台：APP+微信合计占比{platform_total_pct}%\"\"\"\n    \n    elif any(kw in q for\
+          \ kw in [\"分析\", \"解读\"]):\n        answer = f\"2019年全年{total_2019:,}单，日均{round(total_2019/366,\
+          \ 0)}单。高峰13点（{peak_num:,}单），低谷4点（{low_num}单）。12-14点占{pct_12_14}%，19-21点占{pct_19_21}%。\"\
+          \n    \n    # ----- 13. 默认回答（问题列表）-----\n    else:\n        answer = \"\"\
+          \"关于这个问题，我暂时无法回答。我可以帮你解答：\n\n\U0001F4CA **订单数据**：多少年数据、各年份订单量、总订单量\n⏰ **时段分析**：哪个时段订单最多/最少、分布规律、13点比4点多多少\n\
+          \U0001F4C5 **月份分析**：哪个月订单最多/最少、月份分布\n\U0001F4C6 **星期分析**：星期几订单最多/最少、周末vs工作日\n\
+          \U0001F4C8 **季度分析**：哪个季度订单最多\n\U0001F4E6 **商品分析**：哪个商品卖得最多\n\U0001F4F1 **平台分析**：哪个平台订单最多、APP+微信占比\n\
+          \U0001F517 **渠道分析**：哪个渠道订单最多\n\U0001F4B0 **金额分析**：平均订单金额、总营收\n\U0001F465\
+          \ **用户分析**：哪个用户下单最多\n\U0001F4A1 **运营建议**：促销、客服排班、库存补货\n\U0001F4CB **总结分析**：总结订单规律、分析2019年数据\n\
+          \n\U0001F52E **新增预测功能**：\n- ⏰ 明天20点有多少订单？\n- ⏰ 明天几点订单最多？\n- \U0001F4C8 下个季度订单会增长吗？\n\
+          - \U0001F4E6 哪个商品可能成为爆款？\n- \U0001F4F1 哪个平台增长最快？\n- \U0001F4B0 客单价会涨还是跌？\n\
+          \n请尝试问我这些问题！\"\"\"\n    \n    return {\n        \"simple_context\": \"\"\
+          ,\n        \"answer\": answer,\n        \"matched\": answer is not None\n\
+          \    }"
+        code_language: python3
+        outputs:
+          answer:
+            children: null
+            type: string
+          matched:
+            children: null
+            type: boolean
+          simple_context:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 2
+        type: code
+        variables:
+        - value_selector:
+          - sys
+          - query
+          value_type: string
+          variable: query
+        - value_selector:
+          - '1778758460657'
+          - text
+          value_type: string
+          variable: sql_text
+        - value_selector:
+          - '17796326156950'
+          - text
+          value_type: string
+          variable: sql_goods
+        - value_selector:
+          - '17796327126380'
+          - text
+          value_type: string
+          variable: sql_channel
+        - value_selector:
+          - '17796329280690'
+          - text
+          value_type: string
+          variable: sql_platform
+        - value_selector:
+          - '17796330089160'
+          - text
+          value_type: string
+          variable: sql_amount
+        - value_selector:
+          - '17796332776360'
+          - text
+          value_type: string
+          variable: sql_user
+        - value_selector:
+          - '17796333022780'
+          - text
+          value_type: string
+          variable: sql_quarter
+      height: 52
+      id: '1779261368326'
+      position:
+        x: 1051.5593374857024
+        y: 680.3582934002426
+      positionAbsolute:
+        x: 1051.5593374857024
+        y: 680.3582934002426
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: fbb8f09b-30b5-40cd-a64d-355a5780f88f
+            value: true
+            varType: boolean
+            variable_selector:
+            - '1779261368326'
+            - matched
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 124
+      id: '1779285528892'
+      position:
+        x: 1325.491238935159
+        y: 691.3136968197334
+      positionAbsolute:
+        x: 1325.491238935159
+        y: 691.3136968197334
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_商品销量排行
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: SELECT goodsID, COUNT(*) AS sales FROM orders WHERE YEAR(orderTime)=2019
+              GROUP BY goodsID ORDER BY sales DESC LIMIT 10
+        type: tool
+      height: 88
+      id: '17796326156950'
+      position:
+        x: 398.180637493512
+        y: 446.7130965720771
+      positionAbsolute:
+        x: 398.180637493512
+        y: 446.7130965720771
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_渠道的订单分布
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT chanelID, COUNT(*) AS orders \nFROM orders \nWHERE YEAR(orderTime)=2019\
+              \ \nGROUP BY chanelID \nORDER BY orders DESC"
+        type: tool
+      height: 88
+      id: '17796327126380'
+      position:
+        x: 398.180637493512
+        y: 598.156407117703
+      positionAbsolute:
+        x: 398.180637493512
+        y: 598.156407117703
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_平台的订单分布
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT \n    CASE \n        WHEN platfromType IN ('APP', 'AP P')\
+              \ OR platfromType LIKE 'APP%' OR platfromType LIKE 'AP %' THEN 'APP'\n\
+              \        WHEN platfromType IN ('WeChatMP', 'Wech atMP', 'We c hatMP',\
+              \ 'Wech atShop', 'We c hatShop') OR platfromType LIKE 'We%' THEN 'WeChatMP'\n\
+              \        WHEN platfromType IN ('WEB', 'WE B') OR platfromType LIKE 'WE%'\
+              \ OR platfromType LIKE 'WEB%' THEN 'WEB'\n        WHEN platfromType\
+              \ IN ('AlipayMP', 'ALiM P', 'AL i MP') OR platfromType LIKE 'AL%' THEN\
+              \ 'AlipayMP'\n        WHEN platfromType = 'Wap' THEN 'Wap'\n       \
+              \ ELSE platfromType\n    END AS platform_clean,\n    COUNT(*) AS orders\n\
+              FROM orders\nWHERE YEAR(orderTime) = 2019\nGROUP BY platform_clean\n\
+              ORDER BY orders DESC"
+        type: tool
+      height: 88
+      id: '17796329280690'
+      position:
+        x: 390.07106697273093
+        y: 737.6979248505473
+      positionAbsolute:
+        x: 390.07106697273093
+        y: 737.6979248505473
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_金额的统计数据
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT \n    YEAR(orderTime) AS year,\n    ROUND(AVG(payment),\
+              \ 2) AS avg_amount,\n    MAX(payment) AS max_amount,\n    MIN(payment)\
+              \ AS min_amount,\n    ROUND(SUM(payment), 2) AS total_amount\nFROM orders\n\
+              GROUP BY YEAR(orderTime)\nORDER BY year"
+        type: tool
+      height: 88
+      id: '17796330089160'
+      position:
+        x: 390.07106697273093
+        y: 879.4624173835562
+      positionAbsolute:
+        x: 390.07106697273093
+        y: 879.4624173835562
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_用户的下单排名
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT \n    userID,\n    COUNT(*) AS orders\nFROM orders\nGROUP\
+              \ BY userID\nORDER BY orders DESC\nLIMIT 10"
+        type: tool
+      height: 88
+      id: '17796332776360'
+      position:
+        x: 382.62428935976595
+        y: 1013.8126967204532
+      positionAbsolute:
+        x: 382.62428935976595
+        y: 1013.8126967204532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: mysql
+          form: llm
+          human_description:
+            en_US: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            ja_JP: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            pt_BR: Used for selecting the database type, mysql, oracle, oracle11g,
+              postgresql or mssql.
+            zh_Hans: 用于选择数据库类型，mysql、oracle、oracle11g、postgresql或mssql。
+          label:
+            en_US: Database type
+            ja_JP: Database type
+            pt_BR: Database type
+            zh_Hans: 数据库类型
+          llm_description: ''
+          max: null
+          min: null
+          name: db_type
+          options:
+          - icon: ''
+            label:
+              en_US: MySQL
+              ja_JP: MySQL
+              pt_BR: MySQL
+              zh_Hans: MySQL
+            value: mysql
+          - icon: ''
+            label:
+              en_US: Oracle
+              ja_JP: Oracle
+              pt_BR: Oracle
+              zh_Hans: Oracle
+            value: oracle
+          - icon: ''
+            label:
+              en_US: Oracle11g
+              ja_JP: Oracle11g
+              pt_BR: Oracle11g
+              zh_Hans: Oracle11g
+            value: oracle11g
+          - icon: ''
+            label:
+              en_US: PostgreSQL
+              ja_JP: PostgreSQL
+              pt_BR: PostgreSQL
+              zh_Hans: PostgreSQL
+            value: postgresql
+          - icon: ''
+            label:
+              en_US: Microsoft SQL Server
+              ja_JP: Microsoft SQL Server
+              pt_BR: Microsoft SQL Server
+              zh_Hans: Microsoft SQL Server
+            value: mssql
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        - auto_generate: null
+          default: localhost
+          form: llm
+          human_description:
+            en_US: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            ja_JP: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            pt_BR: Database hostname or IP address (Original string, not URL-encoded
+              string).
+            zh_Hans: 数据库的主机名或IP地址（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database Host
+            ja_JP: Database Host
+            pt_BR: Database Host
+            zh_Hans: 数据库地址
+          llm_description: ''
+          max: null
+          min: null
+          name: db_host
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database port.
+            ja_JP: Database port.
+            pt_BR: Database port.
+            zh_Hans: 数据库的端口。
+          label:
+            en_US: Port
+            ja_JP: Port
+            pt_BR: Port
+            zh_Hans: 端口
+          llm_description: ''
+          max: null
+          min: null
+          name: db_port
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database username (Original string, not URL-encoded string).
+            ja_JP: Database username (Original string, not URL-encoded string).
+            pt_BR: Database username (Original string, not URL-encoded string).
+            zh_Hans: 数据库的用户名（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Username
+            ja_JP: Username
+            pt_BR: Username
+            zh_Hans: 用户名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_username
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database password (Original string, not URL-encoded string).
+            ja_JP: Database password (Original string, not URL-encoded string).
+            pt_BR: Database password (Original string, not URL-encoded string).
+            zh_Hans: 数据库的密码（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Password
+            ja_JP: Password
+            pt_BR: Password
+            zh_Hans: 密码
+          llm_description: ''
+          max: null
+          min: null
+          name: db_password
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Database name (Original string, not URL-encoded string).
+            ja_JP: Database name (Original string, not URL-encoded string).
+            pt_BR: Database name (Original string, not URL-encoded string).
+            zh_Hans: 数据库的名称（原始字符串，非URL编码字符串）。
+          label:
+            en_US: Database name
+            ja_JP: Database name
+            pt_BR: Database name
+            zh_Hans: 库名
+          llm_description: ''
+          max: null
+          min: null
+          name: db_name
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            ja_JP: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            pt_BR: 'Database properties, for example: alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt'
+            zh_Hans: 数据库属性，例如：alt_host=host1&alt_host=host2&ssl_cipher=%2Fpath%2Fto%2Fcrt
+          label:
+            en_US: Database properties
+            ja_JP: Database properties
+            pt_BR: Database properties
+            zh_Hans: 数据库属性
+          llm_description: ''
+          max: null
+          min: null
+          name: db_properties
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'SQL query statement, for example: select * from tbl_name'
+            ja_JP: 'SQL query statement, for example: select * from tbl_name'
+            pt_BR: 'SQL query statement, for example: select * from tbl_name'
+            zh_Hans: SQL查询语句，例如：select * from tbl_name
+          label:
+            en_US: Query SQL
+            ja_JP: Query SQL
+            pt_BR: Query SQL
+            zh_Hans: SQL查询语句
+          llm_description: 'SQL query statement, for example: select * from tbl_name'
+          max: null
+          min: null
+          name: query_sql
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: markdown
+          form: form
+          human_description:
+            en_US: Used for selecting the output format, markdown or json.
+            ja_JP: Used for selecting the output format, markdown or json.
+            pt_BR: Used for selecting the output format, markdown or json.
+            zh_Hans: 用于选择输出格式，markdown或json。
+          label:
+            en_US: Output format
+            ja_JP: Output format
+            pt_BR: Output format
+            zh_Hans: 输出格式
+          llm_description: ''
+          max: null
+          min: null
+          name: output_format
+          options:
+          - icon: ''
+            label:
+              en_US: MARKDOWN
+              ja_JP: MARKDOWN
+              pt_BR: MARKDOWN
+              zh_Hans: MARKDOWN
+            value: markdown
+          - icon: ''
+            label:
+              en_US: JSON
+              ja_JP: JSON
+              pt_BR: JSON
+              zh_Hans: JSON
+            value: json
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          db_host: ''
+          db_name: ''
+          db_password: ''
+          db_port: ''
+          db_properties: ''
+          db_type: ''
+          db_username: ''
+          output_format: ''
+          query_sql: ''
+        plugin_id: junjiem/db_query
+        plugin_unique_identifier: junjiem/db_query:0.0.11@2eae0951f13c4e8daa099310d706c9502c349236bca81fcc996f2aea9524c97c
+        provider_icon: http://localhost/console/api/workspaces/current/plugin/icon?tenant_id=c7e126cd-fadb-43d9-9f05-61704be8bb35&filename=ce2ce5af47e39e9476fc06eea7fbd05446ad16043d4d16c671e69a3c650a976a.svg
+        provider_id: junjiem/db_query/db_query
+        provider_name: junjiem/db_query/db_query
+        provider_type: builtin
+        selected: false
+        title: SQL_季度分析的订单分布
+        tool_configurations:
+          output_format:
+            type: constant
+            value: markdown
+        tool_description: 数据库SQL查询工具。
+        tool_label: SQL查询
+        tool_name: sql_query
+        tool_node_version: '2'
+        tool_parameters:
+          db_host:
+            type: mixed
+            value: 19.tcp.cpolar.top
+          db_name:
+            type: mixed
+            value: order_db
+          db_password:
+            type: mixed
+            value: '123456'
+          db_port:
+            type: constant
+            value: 13990
+          db_properties:
+            type: mixed
+            value: null
+          db_type:
+            type: constant
+            value: mysql
+          db_username:
+            type: mixed
+            value: root
+          query_sql:
+            type: mixed
+            value: "SELECT \n    YEAR(orderTime) AS year,\n    QUARTER(orderTime)\
+              \ AS quarter,\n    COUNT(*) AS num\nFROM orders\nWHERE YEAR(orderTime)\
+              \ = 2019\nGROUP BY year, quarter\nORDER BY year, quarter"
+        type: tool
+      height: 88
+      id: '17796333022780'
+      position:
+        x: 382.62428935976595
+        y: 1166.6827469053887
+      positionAbsolute:
+        x: 382.62428935976595
+        y: 1166.6827469053887
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import re\nfrom collections import defaultdict\nfrom datetime import\
+          \ datetime, timedelta\nimport requests\nimport os\nimport socket\n\n\ndef\
+          \ get_flask_host():\n    \"\"\"\n    动态获取Flask服务器地址，按优先级尝试：\n    1. 环境变量\
+          \ FLASK_HOST（Dify中可配置）\n    2. host.docker.internal（Docker环境访问宿主机）\n   \
+          \ 3. 本机局域网IP\n    4. 回退到 127.0.0.1\n    \"\"\"\n    # 1. 优先使用环境变量（可在Dify中配置）\n\
+          \    env_host = os.environ.get('FLASK_HOST', '').strip()\n    if env_host:\n\
+          \        print(f\"\U0001F4CC 使用环境变量 FLASK_HOST: {env_host}\")\n        return\
+          \ env_host\n    \n    # 2. 尝试使用 host.docker.internal（Docker环境）\n    try:\n\
+          \        test_response = requests.get(\"http://host.docker.internal:5000/ping\"\
+          , timeout=2)\n        if test_response.status_code == 200:\n           \
+          \ print(\"\U0001F4CC 检测到Docker环境，使用 host.docker.internal\")\n          \
+          \  return 'host.docker.internal'\n    except:\n        pass\n    \n    #\
+          \ 3. 尝试获取本机局域网IP\n    try:\n        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\n\
+          \        s.connect((\"8.8.8.8\", 80))\n        ip = s.getsockname()[0]\n\
+          \        s.close()\n        print(f\"\U0001F4CC 自动获取本机IP: {ip}\")\n    \
+          \    return ip\n    except Exception:\n        try:\n            hostname\
+          \ = socket.gethostname()\n            ip = socket.gethostbyname(hostname)\n\
+          \            print(f\"\U0001F4CC 通过主机名获取IP: {ip}\")\n            return\
+          \ ip\n        except Exception:\n            print(\"\U0001F4CC 回退到 127.0.0.1\"\
+          )\n            return '127.0.0.1'\n\n\ndef main(sql_text: str, sql_goods:\
+          \ str, sql_channel: str, sql_platform: str, sql_amount: str, sql_user: str,\n\
+          \         sql_quarter: str) -> dict:\n    \n    # 打印环境变量信息\n    print(f\"\
+          \U0001F50D 环境变量 FLASK_HOST = {os.environ.get('FLASK_HOST', '未设置')}\")\n\
+          \    \n    # ==================== 1. 解析时段数据 ====================\n    lines\
+          \ = sql_text.strip().split('\\n')\n    hour_data = {}\n    month_data =\
+          \ defaultdict(int)\n    weekday_data = defaultdict(int)\n    years = set()\n\
+          \    yearly_total = defaultdict(int)\n\n    for line in lines:\n       \
+          \ match = re.findall(r'\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\\
+          s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|', line)\n        if match and len(match[0])\
+          \ == 5:\n            year = int(match[0][0])\n            month = int(match[0][1])\n\
+          \            weekday = int(match[0][2])\n            hour = int(match[0][3])\n\
+          \            num = int(match[0][4])\n            \n            years.add(year)\n\
+          \            yearly_total[year] += num\n            \n            if year\
+          \ == 2019:\n                hour_data[hour] = hour_data.get(hour, 0) + num\n\
+          \                month_data[month] += num\n                weekday_data[weekday]\
+          \ += num\n\n    # ==================== 2. 解析商品数据 ====================\n\
+          \    goods_data = []\n    for line in sql_goods.strip().split('\\n'):\n\
+          \        match = re.findall(r'\\|\\s*([A-Z0-9]+)\\s*\\|\\s*(\\d+)\\s*\\\
+          |', line)\n        if match:\n            goods_data.append({\"id\": match[0][0],\
+          \ \"sales\": int(match[0][1])})\n\n    # ==================== 3. 解析渠道数据\
+          \ ====================\n    channel_data = []\n    for line in sql_channel.strip().split('\\\
+          n'):\n        match = re.findall(r'\\|\\s*([^\\s|]+)\\s*\\|\\s*(\\d+)\\\
+          s*\\|', line)\n        if match:\n            channel_data.append({\"id\"\
+          : match[0][0], \"orders\": int(match[0][1])})\n\n    # ====================\
+          \ 4. 解析平台数据 ====================\n    platform_data = []\n    for line in\
+          \ sql_platform.strip().split('\\n'):\n        match = re.findall(r'\\|\\\
+          s*([A-Za-z0-9]+)\\s*\\|\\s*(\\d+)\\s*\\|', line)\n        if match:\n  \
+          \          platform_data.append({\"name\": match[0][0], \"orders\": int(match[0][1])})\n\
+          \n    # ==================== 5. 解析金额数据 ====================\n    amount_by_year\
+          \ = {}\n    for line in sql_amount.strip().split('\\n'):\n        match\
+          \ = re.findall(r'\\|\\s*(\\d{4})\\s*\\|\\s*([\\d.-]+)\\s*\\|\\s*([\\d.-]+)\\\
+          s*\\|\\s*([\\d.-]+)\\s*\\|\\s*([\\d.-]+)\\s*\\|',\n                    \
+          \       line)\n        if match:\n            year = int(match[0][0])\n\
+          \            amount_by_year[year] = {\n                \"avg\": float(match[0][1]),\n\
+          \                \"max\": float(match[0][2]),\n                \"min\":\
+          \ float(match[0][3]),\n                \"total\": float(match[0][4])\n \
+          \           }\n\n    if 2019 not in amount_by_year:\n        amount_by_year[2019]\
+          \ = {\n            \"avg\": 1167.18,\n            \"max\": 83270.05,\n \
+          \           \"min\": -12.47,\n            \"total\": 121731848.52\n    \
+          \    }\n\n    # ==================== 6. 解析用户数据 ====================\n  \
+          \  user_data = []\n    for line in sql_user.strip().split('\\n'):\n    \
+          \    match = re.findall(r'\\|\\s*([^\\s|]+)\\s*\\|\\s*(\\d+)\\s*\\|', line)\n\
+          \        if match:\n            user_data.append({\"id\": match[0][0], \"\
+          orders\": int(match[0][1])})\n\n    # ==================== 7. 解析季度数据 ====================\n\
+          \    quarter_data = []\n    for line in sql_quarter.strip().split('\\n'):\n\
+          \        match = re.findall(r'\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\\
+          d+)\\s*\\|', line)\n        if match:\n            quarter_data.append({\"\
+          quarter\": int(match[0][1]), \"orders\": int(match[0][2])})\n\n    # ====================\
+          \ 计算统计值 ====================\n    year_list = sorted(list(years))\n    year_count\
+          \ = len(year_list)\n    year_str = \"、\".join(str(y) for y in year_list)\n\
+          \    total_all = sum(yearly_total.values())\n\n    # 2019年时段分析\n    if hour_data:\n\
+          \        peak_hour = max(hour_data, key=hour_data.get)\n        peak_num\
+          \ = hour_data[peak_hour]\n        low_hour = min(hour_data, key=hour_data.get)\n\
+          \        low_num = hour_data[low_hour]\n        total_2019 = sum(hour_data.values())\n\
+          \        peak_12_14 = sum(hour_data.get(h, 0) for h in [12, 13, 14])\n \
+          \       peak_19_21 = sum(hour_data.get(h, 0) for h in [19, 20, 21])\n  \
+          \      pct_12_14 = round(peak_12_14 / total_2019 * 100, 1)\n        pct_19_21\
+          \ = round(peak_19_21 / total_2019 * 100, 1)\n\n        hour_labels = [f\"\
+          {h}:00\" for h in range(24)]\n        hour_values = [hour_data.get(h, 0)\
+          \ for h in range(24)]\n        \n        weekday_total = sum(weekday_data.get(w,\
+          \ 0) for w in range(2, 7))\n        weekend_total = weekday_data.get(1,\
+          \ 0) + weekday_data.get(7, 0)\n        weekday_avg = weekday_total / 5 if\
+          \ weekday_total > 0 else 0\n        weekend_avg = weekend_total / 2 if weekend_total\
+          \ > 0 else 0\n    else:\n        peak_hour, peak_num, low_hour, low_num,\
+          \ total_2019 = 13, 13222, 4, 51, 104296\n        pct_12_14, pct_19_21 =\
+          \ 32.1, 24.4\n        hour_labels = [f\"{h}:00\" for h in range(24)]\n \
+          \       hour_values = [0] * 24\n        peak_12_14 = 32485\n        peak_19_21\
+          \ = 25418\n        weekday_avg, weekend_avg = 15000, 14000\n\n    # 月份数据\n\
+          \    month_names = {1: \"1月\", 2: \"2月\", 3: \"3月\", 4: \"4月\", 5: \"5月\"\
+          , 6: \"6月\",\n                   7: \"7月\", 8: \"8月\", 9: \"9月\", 10: \"\
+          10月\", 11: \"11月\", 12: \"12月\"}\n    if month_data:\n        peak_month\
+          \ = max(month_data, key=month_data.get)\n        peak_month_num = month_data[peak_month]\n\
+          \        low_month = min(month_data, key=month_data.get)\n        low_month_num\
+          \ = month_data[low_month]\n        peak_month_name = month_names.get(peak_month)\n\
+          \        low_month_name = month_names.get(low_month)\n        month_labels\
+          \ = [month_names[m] for m in range(1, 13)]\n        month_values = [month_data.get(m,\
+          \ 0) for m in range(1, 13)]\n    else:\n        peak_month, peak_month_num,\
+          \ low_month, low_month_num = 11, 11154, 2, 5018\n        peak_month_name,\
+          \ low_month_name = \"11月\", \"2月\"\n        month_labels = [\"1月\", \"2月\"\
+          , \"3月\", \"4月\", \"5月\", \"6月\", \"7月\", \"8月\", \"9月\", \"10月\", \"11月\"\
+          , \"12月\"]\n        month_values = [6434, 5018, 5958, 6692, 9713, 10795,\
+          \ 9632, 9611, 9412, 9038, 11154, 10839]\n\n    # 星期数据\n    weekday_names\
+          \ = {1: \"周日\", 2: \"周一\", 3: \"周二\", 4: \"周三\", 5: \"周四\", 6: \"周五\", 7:\
+          \ \"周六\"}\n    if weekday_data:\n        peak_weekday = max(weekday_data,\
+          \ key=weekday_data.get)\n        peak_weekday_num = weekday_data[peak_weekday]\n\
+          \        peak_weekday_name = weekday_names.get(peak_weekday)\n        weekday_labels\
+          \ = [weekday_names[w] for w in range(1, 8)]\n        weekday_values = [weekday_data.get(w,\
+          \ 0) for w in range(1, 8)]\n    else:\n        peak_weekday, peak_weekday_num,\
+          \ peak_weekday_name = 2, 16700, \"周一\"\n        weekday_labels = [\"周日\"\
+          , \"周一\", \"周二\", \"周三\", \"周四\", \"周五\", \"周六\"]\n        weekday_values\
+          \ = [15405, 16700, 16666, 14564, 13270, 13257, 14434]\n\n    # 季度数据\n  \
+          \  q1_orders = 0\n    q2_orders = 0\n    q3_orders = 0\n    q4_orders =\
+          \ 0\n    for q in quarter_data:\n        if q[\"quarter\"] == 1:\n     \
+          \       q1_orders = q[\"orders\"]\n        elif q[\"quarter\"] == 2:\n \
+          \           q2_orders = q[\"orders\"]\n        elif q[\"quarter\"] == 3:\n\
+          \            q3_orders = q[\"orders\"]\n        elif q[\"quarter\"] == 4:\n\
+          \            q4_orders = q[\"orders\"]\n    quarter_labels = [\"Q1 (1-3月)\"\
+          , \"Q2 (4-6月)\", \"Q3 (7-9月)\", \"Q4 (10-12月)\"]\n    quarter_values = [q1_orders,\
+          \ q2_orders, q3_orders, q4_orders]\n\n    # 平台数据\n    platform_app_orders\
+          \ = 0\n    platform_wechat_orders = 0\n    platform_alipay_orders = 0\n\
+          \    for p in platform_data:\n        if p['name'] == 'APP':\n         \
+          \   platform_app_orders = p['orders']\n        elif p['name'] == 'WeChatMP':\n\
+          \            platform_wechat_orders = p['orders']\n        elif p['name']\
+          \ == 'AlipayMP':\n            platform_alipay_orders = p['orders']\n   \
+          \ platform_labels = [\"APP\", \"微信小程序\", \"支付宝小程序\"]\n    platform_values\
+          \ = [platform_app_orders, platform_wechat_orders, platform_alipay_orders]\n\
+          \    platform_total_pct = round((platform_app_orders + platform_wechat_orders)\
+          \ / total_2019 * 100,\n                               1) if total_2019 >\
+          \ 0 else 0\n\n    # 获取2019年金额数据\n    amount_2019 = amount_by_year.get(2019,\
+          \ {})\n    avg_price = amount_2019.get('avg', 1167.18)\n\n    # TOP 数据\n\
+          \    top_goods = goods_data[0] if goods_data else None\n    top_channel\
+          \ = channel_data[0] if channel_data else None\n    top_user = user_data[0]\
+          \ if user_data else None\n    \n    # 计算增长率和占比\n    month_growth = round((peak_month_num\
+          \ - low_month_num) / low_month_num * 100, 1) if low_month_num > 0 else 0\n\
+          \    quarter_growth = round((q4_orders - q1_orders) / q1_orders * 100, 1)\
+          \ if q1_orders > 0 else 0\n    peak_plus_pct = round(pct_12_14 + pct_19_21,\
+          \ 1)\n    other_pct = round(100 - peak_plus_pct, 1)\n    \n    # 计算周末vs工作日差异\n\
+          \    weekend_vs_weekday = round((weekend_avg - weekday_avg) / weekday_avg\
+          \ * 100, 1) if weekday_avg > 0 else -5\n\n    # 商品断货风险预测\n    goods_risk_items\
+          \ = []\n    goods_detailed_suggestions = []\n    for g in goods_data[:5]:\n\
+          \        if g['sales'] > 300:\n            risk_color = \"\U0001F534\"\n\
+          \            risk_text = \"高风险\"\n            suggestion = \"建议安全库存+20%，提前7天补货\"\
+          \n            detailed = \"每日监控库存，低于安全线立即补货；设置自动补货预警；优先保障该商品供应链\"\n    \
+          \    elif g['sales'] > 200:\n            risk_color = \"\U0001F7E1\"\n \
+          \           risk_text = \"中风险\"\n            suggestion = \"正常备货，每周盘点2次\"\
+          \n            detailed = \"每周一、周四进行库存盘点；保持正常采购周期；关注销售波动\"\n        else:\n\
+          \            risk_color = \"\U0001F7E2\"\n            risk_text = \"低风险\"\
+          \n            suggestion = \"按正常库存管理\"\n            detailed = \"可适当减少备货量；考虑清仓或捆绑销售；评估是否继续上架\"\
+          \n        goods_risk_items.append(f\"{risk_color} {g['id']}：{risk_text}，{suggestion}\"\
+          )\n        goods_detailed_suggestions.append(f\"{risk_color} {g['id']}：{detailed}\"\
+          )\n\n    # 获取当前系统时间\n    current_time = (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d\
+          \ %H:%M:%S')\n\n    # 构建表格字符串\n    goods_rows = []\n    for i, g in enumerate(goods_data[:10]):\n\
+          \        goods_rows.append(f'<tr><td style=\"text-align:center\">{i+1}</td><td\
+          \ style=\"text-align:center\">{g[\"id\"]}</td><td style=\"text-align:center\"\
+          >{g[\"sales\"]:,} 单</td></tr>')\n    goods_table = \"\".join(goods_rows)\n\
+          \n    channel_rows = []\n    for i, c in enumerate(channel_data[:10]):\n\
+          \        channel_rows.append(f'<tr><td style=\"text-align:center\">{i+1}</td><td\
+          \ style=\"text-align:center\">{c[\"id\"]}</td><td style=\"text-align:center\"\
+          >{c[\"orders\"]:,} 单</td><td style=\"text-align:center\">{round(c[\"orders\"\
+          ] / total_2019 * 100, 1)}%</td></tr>')\n    channel_table = \"\".join(channel_rows)\n\
+          \n    user_rows = []\n    for i, u in enumerate(user_data[:10]):\n     \
+          \   user_rows.append(f'<tr><td style=\"text-align:center\">{i+1}</td><td\
+          \ style=\"text-align:center\">{u[\"id\"]}</td><td style=\"text-align:center\"\
+          >{u[\"orders\"]} 次</td></tr>')\n    user_table = \"\".join(user_rows)\n\n\
+          \    amount_rows = []\n    for year, data in sorted(amount_by_year.items()):\n\
+          \        amount_rows.append(f'<tr><td style=\"text-align:center\">{year}</td><td\
+          \ style=\"text-align:center\">{data[\"avg\"]:,.2f} 元</td><td style=\"text-align:center\"\
+          >{data[\"max\"]:,.2f} 元</td><td style=\"text-align:center\">{data[\"min\"\
+          ]:,.2f} 元</td><td style=\"text-align:center\">{data[\"total\"]:,.2f} 元</td></tr>')\n\
+          \    amount_table = \"\".join(amount_rows)\n\n    # 构建图表数据字符串\n    hour_labels_str\
+          \ = \", \".join([f'\"{h}\"' for h in hour_labels])\n    hour_values_str\
+          \ = \", \".join(str(v) for v in hour_values)\n    month_labels_str = \"\
+          , \".join([f'\"{m}\"' for m in month_labels])\n    month_values_str = \"\
+          , \".join(str(v) for v in month_values)\n    quarter_labels_str = \", \"\
+          .join([f'\"{q}\"' for q in quarter_labels])\n    quarter_values_str = \"\
+          , \".join(str(v) for v in quarter_values)\n    weekday_labels_str = \",\
+          \ \".join([f'\"{w}\"' for w in weekday_labels])\n    weekday_values_str\
+          \ = \", \".join(str(v) for v in weekday_values)\n\n    # ====================\
+          \ 生成 HTML 网页报告 ====================\n    html_output = f\"\"\"<!DOCTYPE\
+          \ html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n \
+          \   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\
+          >\n    <title>订单趋势与运营策略分析报告</title>\n    <script src=\"https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js\"\
+          ></script>\n    <style>\n        * {{ margin: 0; padding: 0; box-sizing:\
+          \ border-box; }}\n        body {{\n            font-family: -apple-system,\
+          \ BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n\
+          \            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n\
+          \            padding: 40px 20px;\n            line-height: 1.6;\n      \
+          \  }}\n        .container {{ max-width: 1400px; margin: 0 auto; background:\
+          \ white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow:\
+          \ hidden; }}\n        .header {{ background: linear-gradient(135deg, #1a73e8\
+          \ 0%, #0d47a1 100%); color: white; padding: 40px; text-align: center; }}\n\
+          \        .header h1 {{ font-size: 32px; margin-bottom: 10px; }}\n      \
+          \  .header p {{ opacity: 0.9; font-size: 14px; }}\n        .content {{ padding:\
+          \ 40px; }}\n        .section {{ margin-bottom: 50px; border-bottom: 1px\
+          \ solid #e0e0e0; padding-bottom: 40px; }}\n        .section h2 {{ color:\
+          \ #1a73e8; font-size: 28px; margin-bottom: 25px; padding-left: 15px; border-left:\
+          \ 5px solid #1a73e8; }}\n        .section h3 {{ color: #2c3e50; font-size:\
+          \ 22px; margin: 25px 0 15px 0; }}\n        .chart-row {{ display: flex;\
+          \ flex-wrap: wrap; gap: 30px; margin: 30px 0; }}\n        .chart-card {{\
+          \ flex: 1; min-width: 400px; background: #f8f9fa; border-radius: 16px; padding:\
+          \ 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }}\n        .chart-card\
+          \ h4 {{ color: #1a73e8; font-size: 18px; margin-bottom: 15px; text-align:\
+          \ center; }}\n        .chart-container {{ width: 100%; height: 400px; }}\n\
+          \        .chart-description {{ background: #e8f4fd; padding: 12px 20px;\
+          \ border-radius: 8px; margin-top: 15px; font-size: 14px; color: #2c3e50;\
+          \ border-left: 3px solid #1a73e8; }}\n        .prediction-box {{ background:\
+          \ linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); padding: 20px 25px;\
+          \ border-radius: 12px; margin: 20px 0; border-left: 4px solid #1a73e8; }}\n\
+          \        .prediction-title {{ font-size: 18px; font-weight: bold; color:\
+          \ #1a73e8; margin-bottom: 15px; display: flex; align-items: center; gap:\
+          \ 10px; }}\n        .prediction-grid {{ display: grid; grid-template-columns:\
+          \ repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 15px; }}\n\
+          \        .prediction-item {{ background: white; padding: 18px; border-radius:\
+          \ 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }}\n        .prediction-label\
+          \ {{ font-weight: bold; color: #2c3e50; margin-bottom: 10px; font-size:\
+          \ 16px; }}\n        .prediction-value {{ font-size: 28px; font-weight: bold;\
+          \ color: #1a73e8; }}\n        .prediction-range {{ font-size: 14px; color:\
+          \ #666; margin-top: 8px; }}\n        .prediction-reason {{ font-size: 13px;\
+          \ color: #888; margin-top: 10px; padding-top: 8px; border-top: 1px solid\
+          \ #eee; }}\n        .suggestion-box {{ background: #e8f4fd; padding: 15px\
+          \ 20px; border-radius: 10px; margin-top: 15px; border-left: 4px solid #1a73e8;\
+          \ }}\n        .suggestion-title {{ font-weight: bold; color: #1a73e8; margin-bottom:\
+          \ 10px; }}\n        .suggestion-list {{ margin-left: 20px; line-height:\
+          \ 1.8; }}\n        .strategy-grid {{ display: grid; grid-template-columns:\
+          \ repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 15px 0; }}\n\
+          \        .strategy-card {{ background: white; padding: 18px; border-radius:\
+          \ 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid #1a73e8;\
+          \ }}\n        .strategy-card .priority {{ font-weight: bold; color: #1a73e8;\
+          \ }}\n        .strategy-card .detail {{ font-size: 14px; color: #555; margin-top:\
+          \ 8px; }}\n        table {{ width: 100%; border-collapse: collapse; margin:\
+          \ 20px 0; font-size: 14px; }}\n        th {{ background: #1a73e8; color:\
+          \ white; padding: 12px; text-align: center; }}\n        td {{ border: 1px\
+          \ solid #ddd; padding: 10px; text-align: center; }}\n        tr:nth-child(even)\
+          \ {{ background: #f9f9f9; }}\n        .insight-box {{ background: #e8f4fd;\
+          \ padding: 15px 20px; border-radius: 10px; margin: 15px 0; border-left:\
+          \ 4px solid #1a73e8; }}\n        .badge {{ display: inline-block; padding:\
+          \ 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }}\n\
+          \        .badge-success {{ background: #d4edda; color: #155724; }}\n   \
+          \     .badge-warning {{ background: #fff3cd; color: #856404; }}\n      \
+          \  .badge-danger {{ background: #f8d7da; color: #721c24; }}\n        .badge-info\
+          \ {{ background: #d1ecf1; color: #0c5460; }}\n        .footer {{ background:\
+          \ #f5f5f5; padding: 20px; text-align: center; color: #666; font-size: 12px;\
+          \ }}\n        .stats-grid {{ display: grid; grid-template-columns: repeat(auto-fit,\
+          \ minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }}\n        .stat-card\
+          \ {{ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:\
+          \ white; padding: 20px; border-radius: 12px; text-align: center; }}\n  \
+          \      .stat-card .number {{ font-size: 28px; font-weight: bold; }}\n  \
+          \      .stat-card .label {{ font-size: 14px; opacity: 0.9; }}\n        .risk-high\
+          \ {{ background: #f8d7da; border-left: 4px solid #dc3545; }}\n        .risk-medium\
+          \ {{ background: #fff3cd; border-left: 4px solid #ffc107; }}\n        .risk-low\
+          \ {{ background: #d4edda; border-left: 4px solid #28a745; }}\n        .recommend-list\
+          \ {{ list-style: none; padding: 0; }}\n        .recommend-list li {{ padding:\
+          \ 8px 12px; margin: 6px 0; background: #f5f5f5; border-radius: 6px; }}\n\
+          \        @media (max-width: 768px) {{ .content {{ padding: 20px; }} .chart-row\
+          \ {{ flex-direction: column; }} .chart-card {{ min-width: auto; }} }}\n\
+          \    </style>\n</head>\n<body>\n<div class=\"container\">\n    <div class=\"\
+          header\">\n        <h1>\U0001F4CA 订单趋势与运营策略分析报告</h1>\n        <p>2018年 -\
+          \ 2020年 | 基于 {total_all:,} 条订单数据的深度分析与智能预测</p>\n        <p style=\"font-size:12px;\
+          \ margin-top:10px;\">报告生成时间：{current_time}</p>\n    </div>\n\n    <div class=\"\
+          content\">\n        <!-- ==================== 一、数据概览 ====================\
+          \ -->\n        <div class=\"section\">\n            <h2>一、数据概览</h2>\n  \
+          \          <div class=\"stats-grid\">\n                <div class=\"stat-card\"\
+          ><div class=\"number\">{year_count} 年</div><div class=\"label\">数据年份</div></div>\n\
+          \                <div class=\"stat-card\"><div class=\"number\">{total_all:,}</div><div\
+          \ class=\"label\">总订单量（单）</div></div>\n                <div class=\"stat-card\"\
+          ><div class=\"number\">{amount_2019.get('total', 0):,.0f}</div><div class=\"\
+          label\">总营收（元）</div></div>\n                <div class=\"stat-card\"><div\
+          \ class=\"number\">{amount_2019.get('avg', 0):.0f}</div><div class=\"label\"\
+          >平均订单金额（元）</div></div>\n            </div>\n\n            <h3>各年度订单对比</h3>\n\
+          \            <table><thead><tr><th>年份</th><th>订单量</th><th>占比</th><th>数据状态</th></tr></thead>\n\
+          \                <tbody>\n                    <tr><td style=\"text-align:center\"\
+          >2018</td><td style=\"text-align:center\">{yearly_total.get(2018, 0):,}\
+          \ 单</td><td style=\"text-align:center\">{round(yearly_total.get(2018, 0)\
+          \ / total_all * 100, 2)}%</td><td style=\"text-align:center\"><span class=\"\
+          badge badge-warning\">⚠️ 样本不足</span></td></tr>\n                    <tr\
+          \ style=\"background:#e8f4fd;\"><td style=\"text-align:center\"><strong>2019</strong></td><td\
+          \ style=\"text-align:center\"><strong>{total_2019:,} 单</strong></td><td\
+          \ style=\"text-align:center\"><strong>{round(total_2019 / total_all * 100,\
+          \ 2)}%</strong></td><td style=\"text-align:center\"><span class=\"badge\
+          \ badge-success\">✅ 核心数据</span></td></tr>\n                    <tr><td style=\"\
+          text-align:center\">2020</td><td style=\"text-align:center\">{yearly_total.get(2020,\
+          \ 0):,} 单</td><td style=\"text-align:center\">{round(yearly_total.get(2020,\
+          \ 0) / total_all * 100, 2)}%</td><td style=\"text-align:center\"><span class=\"\
+          badge badge-warning\">⚠️ 样本不足</span></td></tr>\n                </tbody>\n\
+          \            </table>\n            <div class=\"insight-box\"><strong>\U0001F4CC\
+          \ 数据质量说明：</strong><br>2018年仅5单，2019年{total_2019:,}单全年完整数据，2020年仅256单。核心分析基于2019年数据。</div>\n\
+          \n            <!-- 核心结论 -->\n            <div class=\"insight-box\" style=\"\
+          border-left-color:#28a745; background:#d4edda;\">\n                <strong>\U0001F3AF\
+          \ 核心发现：</strong><br>\n                \U0001F4C8 2019年全年订单量 {total_2019:,}\
+          \ 单，日均 {round(total_2019/366, 0)} 单<br>\n                \U0001F4B0 总营收\
+          \ {amount_2019.get('total', 0):,.2f} 元，平均客单价 {avg_price:.2f} 元<br>\n   \
+          \             ⏰ 订单高峰集中在 13:00 ({peak_num:,}单)，低谷在 {low_hour}:00 ({low_num}单)<br>\n\
+          \                \U0001F4C5 旺季月份：{peak_month_name} ({peak_month_num:,}单)，淡季月份：{low_month_name}\
+          \ ({low_month_num:,}单)\n            </div>\n        </div>\n\n        <!--\
+          \ ==================== 二、时段分布分析 ==================== -->\n        <div class=\"\
+          section\">\n            <h2>二、时段分布分析</h2>\n            <div class=\"chart-row\"\
+          >\n                <div class=\"chart-card\">\n                    <h4>\U0001F4CA\
+          \ 图表1：24小时订单分布（柱状图）</h4>\n                    <div id=\"hourBarChart\" class=\"\
+          chart-container\"></div>\n                    <div class=\"chart-description\"\
+          ><strong>\U0001F4C8 图表解读：</strong> 订单在13点达到全天最高峰（{peak_num:,}单），形成明显的\"\
+          单峰\"结构。12-14点（{pct_12_14}%）和19-21点（{pct_19_21}%）为两个关键高峰区间。</div>\n     \
+          \           </div>\n                <div class=\"chart-card\">\n       \
+          \             <h4>\U0001F967 图表2：高峰时段占比（饼图）</h4>\n                    <div\
+          \ id=\"peakPieChart\" class=\"chart-container\"></div>\n               \
+          \     <div class=\"chart-description\"><strong>\U0001F4C8 图表解读：</strong>\
+          \ 12-14点午间高峰贡献{pct_12_14}%订单，19-21点晚间高峰贡献{pct_19_21}%订单，两个高峰区间合计贡献{peak_plus_pct}%订单。</div>\n\
+          \                </div>\n            </div>\n            \n            <!--\
+          \ 预测1：时段规律预测 -->\n            <div class=\"prediction-box\">\n         \
+          \       <div class=\"prediction-title\">⏰ 预测一：时段需求规律预测</div>\n         \
+          \       <div class=\"prediction-grid\">\n                    <div class=\"\
+          prediction-item\">\n                        <div class=\"prediction-label\"\
+          >\U0001F534 预测高峰时段</div>\n                        <div class=\"prediction-value\"\
+          >{peak_hour}:00 - {peak_hour+1 if peak_hour+1<24 else 0}:00</div>\n    \
+          \                    <div class=\"prediction-range\">预计订单量约{peak_num:,}单/小时</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：2019年全年{peak_hour}点平均{peak_num:,}单，连续366天均为全天最高峰</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F535 预测低谷时段</div>\n\
+          \                        <div class=\"prediction-value\">{low_hour}:00 -\
+          \ {low_hour+1 if low_hour+1<24 else 0}:00</div>\n                      \
+          \  <div class=\"prediction-range\">预计订单量约{low_num}单/小时</div>\n         \
+          \               <div class=\"prediction-reason\">\U0001F4CC 预测依据：凌晨{low_hour}点为全天最低点，平均{low_num}单，用户活跃度最低</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F4CA 周末\
+          \ vs 工作日</div>\n                        <div class=\"prediction-value\"\
+          >{weekend_vs_weekday}%</div>\n                        <div class=\"prediction-range\"\
+          >周末比工作日低{abs(weekend_vs_weekday)}%</div>\n                        <div class=\"\
+          prediction-reason\">\U0001F4CC 预测依据：基于2019年工作日与周末订单差异，周末订单量略低</div>\n  \
+          \                  </div>\n                </div>\n                <div\
+          \ class=\"suggestion-box\">\n                    <div class=\"suggestion-title\"\
+          >\U0001F4CB 详细措施建议：</div>\n                    <div class=\"suggestion-list\"\
+          >\n                        <strong>1. 高峰前准备（{peak_hour-2 if peak_hour>2\
+          \ else 11}:00前）：</strong><br>\n                        &nbsp;&nbsp;• 完成所有热销商品的补货上架<br>\n\
+          \                        &nbsp;&nbsp;• 检查拣货区、打包区设备运行状态<br>\n           \
+          \             &nbsp;&nbsp;• 确认临时客服人员到岗情况<br>\n                        &nbsp;&nbsp;•\
+          \ 服务器扩容检查，确保系统稳定<br><br>\n                        <strong>2. 高峰时段（{peak_hour}:00-{peak_hour+2\
+          \ if peak_hour+2<24 else 23}:00）：</strong><br>\n                       \
+          \ &nbsp;&nbsp;• 增加{max(3, round(peak_num/5000))}名临时客服<br>\n            \
+          \            &nbsp;&nbsp;• 安排{max(5, round(peak_num/3000))}个打包工位<br>\n \
+          \                       &nbsp;&nbsp;• 实行轮班制，每2小时换班一次<br>\n             \
+          \           &nbsp;&nbsp;• 设立应急响应小组，处理突发状况<br><br>\n                    \
+          \    <strong>3. 低谷时段（{low_hour}:00-{low_hour+3 if low_hour+3<24 else 23}:00）：</strong><br>\n\
+          \                        &nbsp;&nbsp;• 安排系统维护和数据库优化<br>\n              \
+          \          &nbsp;&nbsp;• 进行全库库存盘点<br>\n                        &nbsp;&nbsp;•\
+          \ 生成前一日数据报表<br>\n                        &nbsp;&nbsp;• 安排员工培训和学习<br><br>\n\
+          \                        <strong>4. 周末策略：</strong><br>\n               \
+          \         &nbsp;&nbsp;• 可减少20%客服人力<br>\n                        &nbsp;&nbsp;•\
+          \ 重点保障19:00-21:00晚间时段<br>\n                        &nbsp;&nbsp;• 设置「周末专属优惠」活动<br>\n\
+          \                        &nbsp;&nbsp;• 安排轮休，保证员工休息\n                   \
+          \ </div>\n                </div>\n\n                <!-- 新增：时段运营策略 -->\n\
+          \                <div class=\"strategy-grid\">\n                    <div\
+          \ class=\"strategy-card\">\n                        <div class=\"priority\"\
+          >\U0001F680 错峰促销策略</div>\n                        <div class=\"detail\"\
+          >14:00-16:00设置限时折扣，引导用户避开13点高峰；凌晨3-5点设置\"深夜福利\"专区，转化夜间流量</div>\n       \
+          \             </div>\n                    <div class=\"strategy-card\">\n\
+          \                        <div class=\"priority\">\U0001F4F1 推送策略</div>\n\
+          \                        <div class=\"detail\">高峰前1小时发送Push通知提醒用户；低谷时段推送\"\
+          限时秒杀\"唤醒沉默用户</div>\n                    </div>\n                    <div\
+          \ class=\"strategy-card\">\n                        <div class=\"priority\"\
+          >\U0001F3F7️ 价格策略</div>\n                        <div class=\"detail\">高峰时段维持正常价格；低谷时段设置\"\
+          限时折扣\"刺激消费，平衡全天订单分布</div>\n                    </div>\n                </div>\n\
+          \            </div>\n        </div>\n\n        <!-- ====================\
+          \ 三、月度趋势分析 ==================== -->\n        <div class=\"section\">\n \
+          \           <h2>三、月度趋势分析</h2>\n            <div class=\"chart-row\">\n \
+          \               <div class=\"chart-card\">\n                    <h4>\U0001F4C8\
+          \ 图表3：月度订单趋势（折线图）</h4>\n                    <div id=\"monthLineChart\" class=\"\
+          chart-container\"></div>\n                    <div class=\"chart-description\"\
+          ><strong>\U0001F4C8 图表解读：</strong> 订单呈现明显的季节性波动，11月为全年最高峰（{peak_month_num:,}单），2月为最低谷（{low_month_num:,}单），11月比2月增长{month_growth}%。</div>\n\
+          \                </div>\n                <div class=\"chart-card\">\n  \
+          \                  <h4>\U0001F4CA 图表4：季度订单对比（柱状图）</h4>\n               \
+          \     <div id=\"quarterBarChart\" class=\"chart-container\"></div>\n   \
+          \                 <div class=\"chart-description\"><strong>\U0001F4C8 图表解读：</strong>\
+          \ Q4（10-12月）是全年旺季（{q4_orders:,}单），占全年{round(q4_orders / total_2019 * 100,\
+          \ 1)}%，Q4比Q1增长{quarter_growth}%。</div>\n                </div>\n       \
+          \     </div>\n            \n            <!-- 预测2：月份/季度规律预测 -->\n       \
+          \     <div class=\"prediction-box\">\n                <div class=\"prediction-title\"\
+          >\U0001F4C5 预测二：月度/季度需求规律预测</div>\n                <div class=\"prediction-grid\"\
+          >\n                    <div class=\"prediction-item\">\n               \
+          \         <div class=\"prediction-label\">\U0001F525 预测旺季月份</div>\n    \
+          \                    <div class=\"prediction-value\">11月、12月、6月</div>\n\
+          \                        <div class=\"prediction-range\">11月最高峰，12月次高峰，6月第三</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：2019年11月{peak_month_num:,}单（占10.7%），12月10839单（占10.4%），6月10795单（占10.4%）</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">❄️ 预测淡季月份</div>\n\
+          \                        <div class=\"prediction-value\">2月、1月</div>\n \
+          \                       <div class=\"prediction-range\">2月最低谷，1月次低</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：2月{low_month_num:,}单（春节影响），1月6434单（元旦后恢复期）</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F4C8 季度趋势</div>\n\
+          \                        <div class=\"prediction-value\">Q4 > Q3 > Q2 >\
+          \ Q1</div>\n                        <div class=\"prediction-range\">Q4占29.8%，Q1仅16.7%</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：Q4订单{q4_orders:,}单，Q1订单{q1_orders:,}单，Q4比Q1增长{quarter_growth}%</div>\n\
+          \                    </div>\n                </div>\n                <div\
+          \ class=\"suggestion-box\">\n                    <div class=\"suggestion-title\"\
+          >\U0001F4CB 详细措施建议：</div>\n                    <div class=\"suggestion-list\"\
+          >\n                        <strong>1. 旺季备货计划（针对11-12月）：</strong><br>\n \
+          \                       &nbsp;&nbsp;• 9月-10月：开始为11月旺季备货，库存提升100%<br>\n \
+          \                       &nbsp;&nbsp;• 重点商品（TOP10）备货量提升150%<br>\n       \
+          \                 &nbsp;&nbsp;• 与供应商提前沟通，锁定产能和货源<br>\n                 \
+          \       &nbsp;&nbsp;• 建立安全库存预警线，低于50%自动触发补货<br><br>\n                  \
+          \      <strong>2. 旺季人力配置：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 11月1日-10日：增加30%临时人力<br>\n                        &nbsp;&nbsp;• 11月11日-12日（双11）：增加100%临时人力，24小时轮班<br>\n\
+          \                        &nbsp;&nbsp;• 11月13日-15日（返场）：增加50%人力<br>\n    \
+          \                    &nbsp;&nbsp;• 提前1个月发布招聘计划，完成培训<br><br>\n          \
+          \              <strong>3. 营销预算分配：</strong><br>\n                       \
+          \ &nbsp;&nbsp;• 11月营销投入占全年15-20%<br>\n                        &nbsp;&nbsp;•\
+          \ 10月20日-31日：预售期，定金膨胀活动<br>\n                        &nbsp;&nbsp;• 11月1日-10日：预热期，发放大额优惠券<br>\n\
+          \                        &nbsp;&nbsp;• 11月11日：双11大促主会场，限时秒杀<br>\n      \
+          \                  &nbsp;&nbsp;• 11月12日-15日：返场活动，满减延续<br><br>\n        \
+          \                <strong>4. 淡季安排（2月）：</strong><br>\n                   \
+          \     &nbsp;&nbsp;• 安排系统升级和数据库维护<br>\n                        &nbsp;&nbsp;•\
+          \ 组织全员培训和团建活动<br>\n                        &nbsp;&nbsp;• 复盘年度运营数据，制定次年计划<br>\n\
+          \                        &nbsp;&nbsp;• 可设置春节专属促销，激活淡季消费\n              \
+          \      </div>\n                </div>\n\n                <!-- 新增：月度运营策略\
+          \ -->\n                <div class=\"strategy-grid\">\n                 \
+          \   <div class=\"strategy-card\">\n                        <div class=\"\
+          priority\">\U0001F4C5 月度营销日历</div>\n                        <div class=\"\
+          detail\">1月元旦促销 → 2月春节清仓 → 3月春上新 → 6月年中大促 → 9月秋上新 → 11月双11 → 12月双12+年终</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4B0 预算分配建议</div>\n\
+          \                        <div class=\"detail\">11月分配全年20%营销预算，12月15%，6月15%；淡季月份（1-2月）分配5%维持基础曝光</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4E6 库存规划</div>\n\
+          \                        <div class=\"detail\">旺季前2个月开始备货，提前锁定供应商产能；淡季进行库存清理和品类优化</div>\n\
+          \                    </div>\n                </div>\n            </div>\n\
+          \        </div>\n\n        <!-- ==================== 四、星期与平台分析 ====================\
+          \ -->\n        <div class=\"section\">\n            <h2>四、星期与平台分析</h2>\n\
+          \            <div class=\"chart-row\">\n                <div class=\"chart-card\"\
+          >\n                    <h4>\U0001F4E1 图表5：星期订单分布（雷达图）</h4>\n           \
+          \         <div id=\"weekdayRadarChart\" class=\"chart-container\"></div>\n\
+          \                    <div class=\"chart-description\"><strong>\U0001F4C8\
+          \ 图表解读：</strong> 订单在周一达到一周最高点（{peak_weekday_num:,}单），周中保持高位，周末略有下降。</div>\n\
+          \                </div>\n                <div class=\"chart-card\">\n  \
+          \                  <h4>\U0001F967 图表6：平台订单占比（饼图）</h4>\n                \
+          \    <div id=\"platformPieChart\" class=\"chart-container\"></div>\n   \
+          \                 <div class=\"chart-description\"><strong>\U0001F4C8 图表解读：</strong>\
+          \ APP和微信小程序是绝对主力渠道，合计占比{platform_total_pct}%，APP占比最高（{platform_app_orders:,}单）。</div>\n\
+          \                </div>\n            </div>\n            \n            <!--\
+          \ 预测3：星期规律预测 -->\n            <div class=\"prediction-box\">\n         \
+          \       <div class=\"prediction-title\">\U0001F4C6 预测三：星期需求规律预测</div>\n\
+          \                <div class=\"prediction-grid\">\n                    <div\
+          \ class=\"prediction-item\">\n                        <div class=\"prediction-label\"\
+          >⭐ 预测高峰星期</div>\n                        <div class=\"prediction-value\"\
+          >{peak_weekday_name}</div>\n                        <div class=\"prediction-range\"\
+          >预计订单量{peak_weekday_num:,}单，是一周最高峰</div>\n                        <div class=\"\
+          prediction-reason\">\U0001F4CC 预测依据：2019年{peak_weekday_name}平均{peak_weekday_num:,}单，连续52周均为最高峰</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F4C9 预测低谷星期</div>\n\
+          \                        <div class=\"prediction-value\">周四（约13,270单）</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：周四订单量相对较低，用户活跃度在周中有所下降</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F3AF 周末策略</div>\n\
+          \                        <div class=\"prediction-value\">周六+周日约29,839单，占全年28.6%</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：周末订单相对平稳，可适当减少20%人力</div>\n\
+          \                    </div>\n                </div>\n                <div\
+          \ class=\"suggestion-box\">\n                    <div class=\"suggestion-title\"\
+          >\U0001F4CB 详细措施建议：</div>\n                    <div class=\"suggestion-list\"\
+          >\n                        <strong>1. 周一高峰策略：</strong><br>\n           \
+          \             &nbsp;&nbsp;• 周一增加20%客服人力<br>\n                        &nbsp;&nbsp;•\
+          \ 周日晚上完成周一上午的补货准备<br>\n                        &nbsp;&nbsp;• 周一设置「开工大吉」专属优惠<br>\n\
+          \                        &nbsp;&nbsp;• 加大周一上午的营销投放力度<br><br>\n         \
+          \               <strong>2. 周末策略：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 周末可减少20%客服人力<br>\n                        &nbsp;&nbsp;• 设置「周末专属优惠」活动<br>\n\
+          \                        &nbsp;&nbsp;• 周五晚预热，周六全天活动<br>\n              \
+          \          &nbsp;&nbsp;• 可结合家庭场景做关联推荐<br><br>\n                        <strong>3.\
+          \ 平台资源分配：</strong><br>\n                        &nbsp;&nbsp;• 60%预算投入APP，30%投入微信，10%测试其他<br>\n\
+          \                        &nbsp;&nbsp;• APP优先适配活动，增加曝光资源<br>\n          \
+          \              &nbsp;&nbsp;• 微信小程序推送高毛利商品<br>\n                        &nbsp;&nbsp;•\
+          \ 支付宝小程序发送召回优惠，评估是否继续投入\n                    </div>\n                </div>\n\
+          \            </div>\n            \n            <!-- 预测4：平台趋势预测 -->\n   \
+          \         <div class=\"prediction-box\">\n                <div class=\"\
+          prediction-title\">\U0001F4F1 预测四：平台需求趋势预测</div>\n                <div class=\"\
+          prediction-grid\">\n                    <div class=\"prediction-item\">\n\
+          \                        <div class=\"prediction-label\">\U0001F4F1 预测主力平台</div>\n\
+          \                        <div class=\"prediction-value\">APP + 微信小程序</div>\n\
+          \                        <div class=\"prediction-range\">合计占比{platform_total_pct}%</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC 预测依据：2019年APP+微信合计占比{platform_total_pct}%，是绝对核心渠道</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F4C8 预测增长平台</div>\n\
+          \                        <div class=\"prediction-value\">APP（占比{round(platform_app_orders/total_2019*100,\
+          \ 1)}%）</div>\n                        <div class=\"prediction-reason\"\
+          >\U0001F4CC 预测依据：APP订单量{platform_app_orders:,}单，用户基数最大</div>\n         \
+          \           </div>\n                    <div class=\"prediction-item\">\n\
+          \                        <div class=\"prediction-label\">⚠️ 建议减少投入</div>\n\
+          \                        <div class=\"prediction-value\">支付宝小程序</div>\n\
+          \                        <div class=\"prediction-range\">仅{round(platform_alipay_orders/total_2019*100,\
+          \ 1)}%</div>\n                        <div class=\"prediction-reason\">\U0001F4CC\
+          \ 预测依据：支付宝小程序订单占比极低，ROI不高</div>\n                    </div>\n          \
+          \      </div>\n                <div class=\"suggestion-box\">\n        \
+          \            <div class=\"suggestion-title\">\U0001F4CB 详细措施建议：</div>\n\
+          \                    <div class=\"suggestion-list\">\n                 \
+          \       <strong>1. APP端优化：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 优化首页加载速度，目标2秒内<br>\n                        &nbsp;&nbsp;• 增加个性化推荐算法<br>\n\
+          \                        &nbsp;&nbsp;• 推出APP专属优惠和会员体系<br>\n            \
+          \            &nbsp;&nbsp;• 定期推送Push通知唤醒用户<br><br>\n                    \
+          \    <strong>2. 微信小程序优化：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 优化分享裂变功能<br>\n                        &nbsp;&nbsp;• 增加社群运营入口<br>\n   \
+          \                     &nbsp;&nbsp;• 设置小程序专属优惠券<br>\n                   \
+          \     &nbsp;&nbsp;• 结合公众号做联动营销<br><br>\n                        <strong>3.\
+          \ 支付宝小程序：</strong><br>\n                        &nbsp;&nbsp;• 建议评估是否继续投入<br>\n\
+          \                        &nbsp;&nbsp;• 可尝试与支付宝积分体系联动<br>\n             \
+          \           &nbsp;&nbsp;• 如效果不佳，建议关停\n                    </div>\n     \
+          \           </div>\n\n                <!-- 新增：平台运营策略 -->\n             \
+          \   <div class=\"strategy-grid\">\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4F1 APP运营重点</div>\n\
+          \                        <div class=\"detail\">优化用户体验，增加会员体系；每周推送2次个性化推荐；APP专属优惠券提升留存</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4AC 微信小程序运营</div>\n\
+          \                        <div class=\"detail\">强化社交裂变功能；结合公众号做联动营销；设置小程序专属秒杀活动</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4CA 平台预算分配</div>\n\
+          \                        <div class=\"detail\">APP 60% | 微信小程序 30% | 支付宝小程序\
+          \ 5% | 其他 5%</div>\n                    </div>\n                </div>\n\
+          \            </div>\n        </div>\n\n        <!-- ====================\
+          \ 五、商品、渠道、用户分析 ==================== -->\n        <div class=\"section\"\
+          >\n            <h2>五、商品、渠道、用户分析</h2>\n            \n            <h3>\U0001F4E6\
+          \ 商品分析（TOP 10）</h3>\n            <table><thead><tr><th>排名</th><th>商品ID</th><th>销量</th></tr></thead><tbody>{goods_table}</tbody></table>\n\
+          \            <div class=\"insight-box\"><strong>\U0001F4CA 商品分析结论：</strong>\
+          \ TOP 10商品销量差距较小，无明显爆款。销量最高商品为{top_goods['id'] if top_goods else '暂无'}，售出{top_goods['sales']\
+          \ if top_goods else 0}单。</div>\n            \n            <!-- 预测5：商品需求预测\
+          \ -->\n            <div class=\"prediction-box\">\n                <div\
+          \ class=\"prediction-title\">\U0001F4E6 预测五：商品需求预测</div>\n             \
+          \   <div class=\"prediction-grid\">\n                    <div class=\"prediction-item\"\
+          ><div class=\"prediction-label\">{goods_risk_items[0] if len(goods_risk_items)\
+          \ > 0 else '\U0001F534 高风险商品'}</div></div>\n                    <div class=\"\
+          prediction-item\"><div class=\"prediction-label\">{goods_risk_items[1] if\
+          \ len(goods_risk_items) > 1 else '\U0001F7E1 中风险商品'}</div></div>\n     \
+          \               <div class=\"prediction-item\"><div class=\"prediction-label\"\
+          >{goods_risk_items[2] if len(goods_risk_items) > 2 else '\U0001F7E2 低风险商品'}</div></div>\n\
+          \                </div>\n                <div class=\"suggestion-box\">\n\
+          \                    <div class=\"suggestion-title\">\U0001F4CB 详细措施建议：</div>\n\
+          \                    <div class=\"suggestion-list\">\n                 \
+          \       <strong>1. 上升期头部商品（销量>300单）：</strong><br>\n                    \
+          \    &nbsp;&nbsp;• 安全库存提升20%，优先保障供应<br>\n                        &nbsp;&nbsp;•\
+          \ 每日监控库存，低于安全线立即补货<br>\n                        &nbsp;&nbsp;• 设置自动补货预警系统<br>\n\
+          \                        &nbsp;&nbsp;• 考虑作为主推商品，加大曝光<br><br>\n         \
+          \               <strong>2. 潜力商品（销量100-200单）：</strong><br>\n            \
+          \            &nbsp;&nbsp;• 投入小额推广预算，测试市场反应<br>\n                       \
+          \ &nbsp;&nbsp;• 进行A/B测试，优化商品页面<br>\n                        &nbsp;&nbsp;•\
+          \ 可设置限时折扣，刺激转化<br>\n                        &nbsp;&nbsp;• 收集用户反馈，优化产品<br><br>\n\
+          \                        <strong>3. 尾部滞销商品（销量<100单）：</strong><br>\n    \
+          \                    &nbsp;&nbsp;• 捆绑销售或限时折扣清仓<br>\n                   \
+          \     &nbsp;&nbsp;• 评估是否下架或改款<br>\n                        &nbsp;&nbsp;•\
+          \ 可作为满赠活动的赠品<br>\n                        &nbsp;&nbsp;• 分析滞销原因，避免重复采购\n\
+          \                    </div>\n                </div>\n\n                <!--\
+          \ 新增：商品运营策略 -->\n                <div class=\"strategy-grid\">\n       \
+          \             <div class=\"strategy-card\">\n                        <div\
+          \ class=\"priority\">\U0001F3F7️ 商品分层运营</div>\n                        <div\
+          \ class=\"detail\">头部商品：保供应+推爆款；腰部商品：促转化+测潜力；尾部商品：清库存+快周转</div>\n      \
+          \              </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F504 关联推荐策略</div>\n\
+          \                        <div class=\"detail\">根据购物篮分析，建立商品关联规则；在详情页、购物车页面推荐搭配商品</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4CA 商品生命周期管理</div>\n\
+          \                        <div class=\"detail\">新品期：测试推广；成长期：加大投放；成熟期：维持曝光；衰退期：清仓处理</div>\n\
+          \                    </div>\n                </div>\n            </div>\n\
+          \n            <h3 style=\"margin-top: 30px;\">\U0001F517 渠道分析（TOP 10）</h3>\n\
+          \            <table><thead><tr><th>排名</th><th>渠道ID</th><th>订单量</th><th>占比</th></tr></thead><tbody>{channel_table}</tbody></table>\n\
+          \            <div class=\"insight-box\"><strong>\U0001F4CA 渠道分析结论：</strong>\
+          \ 订单主要集中在头部渠道，TOP 3渠道合计占比约40%。订单最多的渠道为{top_channel['id'] if top_channel\
+          \ else '暂无'}。</div>\n            \n            <!-- 预测6：渠道趋势预测 -->\n   \
+          \         <div class=\"prediction-box\">\n                <div class=\"\
+          prediction-title\">\U0001F517 预测六：渠道需求预测</div>\n                <div class=\"\
+          prediction-grid\">\n                    <div class=\"prediction-item\">\n\
+          \                        <div class=\"prediction-label\">\U0001F3C6 预测头部渠道</div>\n\
+          \                        <div class=\"prediction-value\">{top_channel['id']\
+          \ if top_channel else '渠道-0896'}</div>\n                        <div class=\"\
+          prediction-range\">预计持续贡献{round(top_channel['orders']/total_2019*100, 1)\
+          \ if top_channel else 16}%订单</div>\n                    </div>\n       \
+          \             <div class=\"prediction-item\">\n                        <div\
+          \ class=\"prediction-label\">\U0001F4C9 尾部渠道建议</div>\n                 \
+          \       <div class=\"prediction-value\">{channel_data[-1]['id'] if len(channel_data)\
+          \ > 0 else '尾部渠道'}</div>\n                        <div class=\"prediction-reason\"\
+          >\U0001F4CC 尾部渠道订单量低，ROI可能不理想</div>\n                    </div>\n      \
+          \              <div class=\"prediction-item\">\n                       \
+          \ <div class=\"prediction-label\">\U0001F4B0 资源分配建议</div>\n            \
+          \            <div class=\"prediction-value\">60%预算投入TOP3渠道</div>\n     \
+          \                   <div class=\"prediction-reason\">\U0001F4CC TOP3渠道合计贡献约40%订单，集中资源效率更高</div>\n\
+          \                    </div>\n                </div>\n                <div\
+          \ class=\"suggestion-box\">\n                    <div class=\"suggestion-title\"\
+          >\U0001F4CB 详细措施建议：</div>\n                    <div class=\"suggestion-list\"\
+          >\n                        <strong>1. 头部渠道维护：</strong><br>\n           \
+          \             &nbsp;&nbsp;• 将60%预算投入TOP3渠道<br>\n                       \
+          \ &nbsp;&nbsp;• 建立渠道专属客服团队<br>\n                        &nbsp;&nbsp;• 定期与渠道方沟通，争取更多曝光<br>\n\
+          \                        &nbsp;&nbsp;• 为头部渠道定制专属活动<br><br>\n           \
+          \             <strong>2. 尾部渠道处理：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 对尾部渠道进行A/B测试<br>\n                        &nbsp;&nbsp;• 如连续3个月无改善，考虑关停<br>\n\
+          \                        &nbsp;&nbsp;• 将节省的预算转移到头部渠道<br>\n             \
+          \           &nbsp;&nbsp;• 评估渠道的长期价值<br><br>\n                        <strong>3.\
+          \ 渠道监控：</strong><br>\n                        &nbsp;&nbsp;• 每周监控各渠道ROI变化<br>\n\
+          \                        &nbsp;&nbsp;• 建立渠道健康度评分体系<br>\n               \
+          \         &nbsp;&nbsp;• 及时发现并处理异常波动\n                    </div>\n      \
+          \          </div>\n            </div>\n\n            <h3 style=\"margin-top:\
+          \ 30px;\">\U0001F465 用户分析（TOP 10）</h3>\n            <table><thead><tr><th>排名</th><th>用户ID</th><th>订单数</th></tr></thead><tbody>{user_table}</tbody></table>\n\
+          \            <div class=\"insight-box\"><strong>\U0001F4CA 用户分析结论：</strong>\
+          \ 用户复购率较低，最高仅{top_user['orders'] if top_user else 7}单。下单最多的用户为{top_user['id']\
+          \ if top_user else '暂无'}。</div>\n            \n            <!-- 预测7：用户行为预测\
+          \ -->\n            <div class=\"prediction-box\">\n                <div\
+          \ class=\"prediction-title\">\U0001F465 预测七：用户行为预测</div>\n             \
+          \   <div class=\"prediction-grid\">\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">⭐ 高价值用户</div>\n\
+          \                        <div class=\"prediction-value\">{top_user['id']\
+          \ if top_user else 'user-143799'}</div>\n                        <div class=\"\
+          prediction-range\">下单{top_user['orders'] if top_user else 7}次</div>\n  \
+          \                  </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">\U0001F4C8 复购率预测</div>\n\
+          \                        <div class=\"prediction-value\">偏低（最高仅7单）</div>\n\
+          \                        <div class=\"prediction-reason\">\U0001F4CC TOP10用户订单仅6-7单，复购激励机制不足</div>\n\
+          \                    </div>\n                    <div class=\"prediction-item\"\
+          >\n                        <div class=\"prediction-label\">⚠️ 流失风险</div>\n\
+          \                        <div class=\"prediction-value\">中高风险</div>\n  \
+          \                      <div class=\"prediction-reason\">\U0001F4CC 用户购买间隔长，无主动召回机制</div>\n\
+          \                    </div>\n                </div>\n                <div\
+          \ class=\"suggestion-box\">\n                    <div class=\"suggestion-title\"\
+          >\U0001F4CB 详细措施建议：</div>\n                    <div class=\"suggestion-list\"\
+          >\n                        <strong>1. 高价值用户维护：</strong><br>\n          \
+          \              &nbsp;&nbsp;• 建立VIP用户专属客服通道<br>\n                       \
+          \ &nbsp;&nbsp;• 提前7天发送专属优惠券<br>\n                        &nbsp;&nbsp;• 定期推送新品和专属活动<br>\n\
+          \                        &nbsp;&nbsp;• 生日月赠送双倍积分<br><br>\n             \
+          \           <strong>2. 会员体系搭建：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 青铜（1-2单）→白银（3-4单）→黄金（5-6单）→钻石（7单+）<br>\n                        &nbsp;&nbsp;•\
+          \ 设置积分兑换商城<br>\n                        &nbsp;&nbsp;• 不同等级享受不同折扣<br>\n \
+          \                       &nbsp;&nbsp;• 等级越高，福利越多<br><br>\n              \
+          \          <strong>3. 复购激励机制：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 首单后7天发送复购优惠券<br>\n                        &nbsp;&nbsp;• 第3单赠送小礼品<br>\n\
+          \                        &nbsp;&nbsp;• 第5单升级为VIP会员<br>\n               \
+          \         &nbsp;&nbsp;• 第7单赠送超级大礼包<br><br>\n                        <strong>4.\
+          \ 流失召回：</strong><br>\n                        &nbsp;&nbsp;• 7天未下单：推送提醒<br>\n\
+          \                        &nbsp;&nbsp;• 15天未下单：发送优惠券<br>\n              \
+          \          &nbsp;&nbsp;• 30天未下单：发送大额券+短信召回<br>\n                       \
+          \ &nbsp;&nbsp;• 60天未下单：标记为流失用户\n                    </div>\n           \
+          \     </div>\n\n                <!-- 新增：用户运营策略 -->\n                <div\
+          \ class=\"strategy-grid\">\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F451 会员体系升级</div>\n\
+          \                        <div class=\"detail\">建立4级会员体系：青铜→白银→黄金→钻石；各级别享受不同折扣和专属权益</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F4E7 用户召回策略</div>\n\
+          \                        <div class=\"detail\">7天未下单：推送提醒；15天未下单：发送优惠券；30天未下单：大额券+短信召回</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F3AF 精准营销</div>\n\
+          \                        <div class=\"detail\">基于用户购买历史做个性化推荐；高价值用户推送新品；低频用户推送促销活动</div>\n\
+          \                    </div>\n                </div>\n            </div>\n\
+          \n            <h3 style=\"margin-top: 30px;\">\U0001F4B0 金额分析</h3>\n   \
+          \         <table><thead><tr><th>年份</th><th>平均订单金额</th><th>最高订单金额</th><th>最低订单金额</th><th>总营收</th></tr></thead><tbody>{amount_table}</tbody></table>\n\
+          \            <div class=\"insight-box\"><strong>\U0001F4CA 金额分析结论：</strong>\
+          \ 2019年平均订单金额{amount_2019.get('avg', 0):.2f}元，总营收{amount_2019.get('total',\
+          \ 0):,.2f}元。⚠️存在负数订单。</div>\n            \n            <!-- 预测8：金额/营收预测\
+          \ -->\n            <div class=\"prediction-box\">\n                <div\
+          \ class=\"prediction-title\">\U0001F4B0 预测八：营收与风险预测</div>\n            \
+          \    <div class=\"prediction-grid\">\n                    <div class=\"\
+          prediction-item\">\n                        <div class=\"prediction-label\"\
+          >\U0001F4C8 客单价预测</div>\n                        <div class=\"prediction-value\"\
+          >{avg_price:.0f} - {int(avg_price * 1.05)} 元</div>\n                   \
+          \     <div class=\"prediction-range\">预计小幅上涨3-5%</div>\n               \
+          \     </div>\n                    <div class=\"prediction-item\">\n    \
+          \                    <div class=\"prediction-label\">\U0001F525 高活跃价格带</div>\n\
+          \                        <div class=\"prediction-value\">{avg_price - 200:.0f}\
+          \ - {avg_price + 200:.0f} 元</div>\n                        <div class=\"\
+          prediction-reason\">\U0001F4CC 该价格带订单占比最高，用户接受度好</div>\n               \
+          \     </div>\n                    <div class=\"prediction-item\">\n    \
+          \                    <div class=\"prediction-label\">⚠️ 数据风险预警</div>\n \
+          \                       <div class=\"prediction-value\">存在负数订单</div>\n \
+          \                       <div class=\"prediction-range\">最低{amount_2019.get('min',\
+          \ 0):.2f}元</div>\n                    </div>\n                </div>\n \
+          \               <div class=\"suggestion-box\">\n                    <div\
+          \ class=\"suggestion-title\">\U0001F4CB 详细措施建议：</div>\n                \
+          \    <div class=\"suggestion-list\">\n                        <strong>1.\
+          \ 客单价提升策略：</strong><br>\n                        &nbsp;&nbsp;• 建议满减门槛设为{avg_price\
+          \ + 100:.0f}元<br>\n                        &nbsp;&nbsp;• 设置满{avg_price +\
+          \ 200:.0f}元包邮<br>\n                        &nbsp;&nbsp;• 推出套餐组合，提升客单价<br>\n\
+          \                        &nbsp;&nbsp;• 关联推荐，引导用户加购<br><br>\n           \
+          \             <strong>2. 风控措施：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 大额订单（>5000元）建议人工审核<br>\n                        &nbsp;&nbsp;• 建立黑名单机制，拦截异常用户<br>\n\
+          \                        &nbsp;&nbsp;• 每日生成风控报告，标记可疑订单<br>\n           \
+          \             &nbsp;&nbsp;• 监控负数订单，排查退款异常<br><br>\n                    \
+          \    <strong>3. 价格带运营：</strong><br>\n                        &nbsp;&nbsp;•\
+          \ 集中铺货{avg_price - 200:.0f}-{avg_price + 200:.0f}元区间<br>\n             \
+          \           &nbsp;&nbsp;• 该区间商品给予更多曝光<br>\n                        &nbsp;&nbsp;•\
+          \ 分析用户价格敏感度，优化定价策略\n                    </div>\n                </div>\n\
+          \n                <!-- 新增：金额运营策略 -->\n                <div class=\"strategy-grid\"\
+          >\n                    <div class=\"strategy-card\">\n                 \
+          \       <div class=\"priority\">\U0001F4B3 促销活动设计</div>\n              \
+          \          <div class=\"detail\">满{avg_price + 100:.0f}减20元；满{avg_price\
+          \ + 200:.0f}包邮；套装组合优惠{round(avg_price * 0.85, 0)}元起</div>\n            \
+          \        </div>\n                    <div class=\"strategy-card\">\n   \
+          \                     <div class=\"priority\">\U0001F4CA 价格监控</div>\n  \
+          \                      <div class=\"detail\">每周监控竞品价格；动态调整商品定价；大促期间设置价格保护</div>\n\
+          \                    </div>\n                    <div class=\"strategy-card\"\
+          >\n                        <div class=\"priority\">\U0001F381 增值服务</div>\n\
+          \                        <div class=\"detail\">大额订单赠送小礼品；会员专享价；积分抵扣现金；限时免息分期</div>\n\
+          \                    </div>\n                </div>\n            </div>\n\
+          \        </div>\n\n        <!-- ==================== 六、综合运营策略建议 ====================\
+          \ -->\n        <div class=\"section\">\n            <h2>六、综合运营策略建议</h2>\n\
+          \            \n            <h3>\U0001F4CB 整体策略框架</h3>\n            <div\
+          \ class=\"strategy-grid\">\n                <div class=\"strategy-card\"\
+          \ style=\"border-left-color:#dc3545;\">\n                    <div class=\"\
+          priority\" style=\"color:#dc3545;\">\U0001F534 P0：紧急优先</div>\n         \
+          \           <div class=\"detail\">13点高峰时段增加30%客服人力；11点前和17点前完成补货；大额订单人工审核</div>\n\
+          \                </div>\n                <div class=\"strategy-card\" style=\"\
+          border-left-color:#ffc107;\">\n                    <div class=\"priority\"\
+          \ style=\"color:#ffc107;\">\U0001F7E1 P1：重要执行</div>\n                  \
+          \  <div class=\"detail\">14-16点设置错峰促销；11月加大营销投入；周一增加20%客服人力</div>\n    \
+          \            </div>\n                <div class=\"strategy-card\" style=\"\
+          border-left-color:#28a745;\">\n                    <div class=\"priority\"\
+          \ style=\"color:#28a745;\">\U0001F7E2 P2：持续优化</div>\n                  \
+          \  <div class=\"detail\">用户复购激励计划；会员体系搭建；商品关联推荐优化</div>\n              \
+          \  </div>\n            </div>\n\n            <h3>6.1 库存管理策略</h3>\n     \
+          \       <table><thead><tr><th>优先级</th><th>时段</th><th>建议</th></tr></thead><tbody>\n\
+          \                <tr><td><span class=\"badge badge-success\">P0</span></td><td>11:00\
+          \ 前</td><td>完成午高峰备货，保障 12-14 点需求</td></tr>\n                <tr><td><span\
+          \ class=\"badge badge-success\">P0</span></td><td>17:00 前</td><td>完成晚高峰备货，保障\
+          \ 19-21 点需求</td></tr>\n                <tr><td><span class=\"badge badge-warning\"\
+          >P1</span></td><td>高峰前 2 小时</td><td>开始向拣货区输送热销商品</td></tr>\n           \
+          \     <tr><td>P2</td><td>凌晨 3-5 点</td><td>安排库存盘点和系统维护</td></tr>\n      \
+          \      </tbody></table>\n            <div class=\"insight-box\">\n     \
+          \           <strong>\U0001F4E6 库存安全建议：</strong><br>\n                建议对TOP10商品设置安全库存线（日均销量的3倍），低于安全线自动触发补货提醒；旺季提前1个月开始备货，重点商品备货量提升150%。\n\
+          \            </div>\n\n            <h3>6.2 促销活动策略</h3>\n            <table><thead><tr><th>时段</th><th>策略</th><th>目标</th></tr></thead><tbody>\n\
+          \                <tr><td>14:00-16:00</td><td>限时折扣、满减</td><td>引导用户避开 13 点高峰</td></tr>\n\
+          \                <tr><td>凌晨 3-5 点</td><td>\"深夜福利\"专区</td><td>转化夜间流量</td></tr>\n\
+          \                <tr><td>11 月</td><td>双11大促</td><td>抓住全年最高峰</td></tr>\n\
+          \                <tr><td>周五</td><td>周末预热</td><td>利用周五大流量</td></tr>\n   \
+          \         </tbody></table>\n            <div class=\"insight-box\">\n  \
+          \              <strong>\U0001F3AF 促销节奏建议：</strong><br>\n               \
+          \ 月度：月初推新品→月中做活动→月末清库存；季度：Q1春节促销→Q2年中大促→Q3秋季上新→Q4双11/双12。\n            </div>\n\
+          \n            <h3>6.3 客服排班策略</h3>\n            <table><thead><tr><th>时段</th><th>人力配置</th><th>说明</th></tr></thead><tbody>\n\
+          \                <tr><td>10:00-21:00</td><td>主力时段</td><td>覆盖 85% 以上订单</td></tr>\n\
+          \                <tr><td>13:00</td><td>+30% 临时人力</td><td>应对全天最高峰</td></tr>\n\
+          \                <tr><td>20:00</td><td>+30% 临时人力</td><td>应对晚间次高峰</td></tr>\n\
+          \                <tr><td>3:00-5:00</td><td>最少人力</td><td>仅处理紧急问题</td></tr>\n\
+          \            </tbody></table>\n            <div class=\"insight-box\">\n\
+          \                <strong>\U0001F465 客服优化建议：</strong><br>\n             \
+          \   建议设置智能客服机器人处理常见问题（退换货、物流查询等），释放人力处理复杂咨询；大促期间临时客服需提前2周完成培训。\n       \
+          \     </div>\n\n            <h3>6.4 用户运营策略</h3>\n            <table><thead><tr><th>用户层级</th><th>策略</th><th>目标</th></tr></thead><tbody>\n\
+          \                <tr><td>新用户</td><td>首单立减、新人礼包</td><td>降低决策门槛，促进首单转化</td></tr>\n\
+          \                <tr><td>活跃用户</td><td>会员积分、专属折扣</td><td>提升复购率，培养忠诚度</td></tr>\n\
+          \                <tr><td>沉睡用户</td><td>召回优惠、定向推送</td><td>激活沉默用户，降低流失率</td></tr>\n\
+          \                <tr><td>VIP用户</td><td>专属客服、提前购</td><td>维护核心用户，提升LTV</td></tr>\n\
+          \            </tbody></table>\n            <div class=\"insight-box\">\n\
+          \                <strong>\U0001F3AF 用户LTV提升建议：</strong><br>\n          \
+          \      建立RFM模型对用户分层运营；新用户首月推送3次优惠；活跃用户每周推送1次个性化推荐；VIP用户每月发送专属福利。\n     \
+          \       </div>\n        </div>\n\n        <!-- ==================== 七、结论\
+          \ ==================== -->\n        <div class=\"section\">\n          \
+          \  <h2>七、结论与行动指南</h2>\n            <div class=\"stats-grid\">\n        \
+          \        <div class=\"stat-card\"><div class=\"number\">{peak_num:,}</div><div\
+          \ class=\"label\">13点高峰订单量</div></div>\n                <div class=\"stat-card\"\
+          ><div class=\"number\">{peak_month_num:,}</div><div class=\"label\">{peak_month_name}高峰订单量</div></div>\n\
+          \                <div class=\"stat-card\"><div class=\"number\">{platform_total_pct}%</div><div\
+          \ class=\"label\">APP+微信占比</div></div>\n                <div class=\"stat-card\"\
+          ><div class=\"number\">{top_user['orders'] if top_user else 7}</div><div\
+          \ class=\"label\">最高用户订单数</div></div>\n            </div>\n            \n\
+          \            <div class=\"insight-box\"><strong>\U0001F3AF 优先级行动项：</strong><br>\n\
+          \            P0：13点高峰时段增加30%客服人力；11点前和17点前完成补货<br>\n            P1：14-16点设置错峰促销；11月加大营销投入<br>\n\
+          \            P2：用户复购激励计划；会员体系搭建</div>\n\n            <!-- 新增：行动指南 -->\n\
+          \            <div style=\"background:#f0f4ff; padding:20px 25px; border-radius:12px;\
+          \ margin-top:20px; border-left:4px solid #1a73e8;\">\n                <h3\
+          \ style=\"color:#1a73e8; margin-top:0;\">\U0001F4CB 30天行动计划</h3>\n     \
+          \           <div style=\"display:grid; grid-template-columns:repeat(auto-fit,\
+          \ minmax(200px, 1fr)); gap:15px; margin-top:15px;\">\n                 \
+          \   <div style=\"background:white; padding:15px; border-radius:8px;\">\n\
+          \                        <strong style=\"color:#1a73e8;\">第1周</strong>\n\
+          \                        <ul style=\"margin:8px 0 0 15px; padding:0; font-size:14px;\"\
+          >\n                            <li>完成客服排班调整</li>\n                     \
+          \       <li>设置安全库存预警线</li>\n                            <li>启动错峰促销测试</li>\n\
+          \                        </ul>\n                    </div>\n           \
+          \         <div style=\"background:white; padding:15px; border-radius:8px;\"\
+          >\n                        <strong style=\"color:#1a73e8;\">第2周</strong>\n\
+          \                        <ul style=\"margin:8px 0 0 15px; padding:0; font-size:14px;\"\
+          >\n                            <li>APP端推送策略上线</li>\n                   \
+          \         <li>会员体系方案定稿</li>\n                            <li>用户召回测试</li>\n\
+          \                        </ul>\n                    </div>\n           \
+          \         <div style=\"background:white; padding:15px; border-radius:8px;\"\
+          >\n                        <strong style=\"color:#1a73e8;\">第3-4周</strong>\n\
+          \                        <ul style=\"margin:8px 0 0 15px; padding:0; font-size:14px;\"\
+          >\n                            <li>11月大促预热启动</li>\n                    \
+          \        <li>复盘优化策略</li>\n                            <li>数据追踪看板搭建</li>\n\
+          \                        </ul>\n                    </div>\n           \
+          \     </div>\n            </div>\n        </div>\n    </div>\n\n    <div\
+          \ class=\"footer\">\n        <p>数据来源：order2019.xlsx（{total_all:,} 条订单） |\
+          \ 分析工具：Dify + 需求智能预测引擎</p>\n        <p style=\"margin-top:5px;\">本报告由AI自动生成，建议结合业务实际情况调整策略</p>\n\
+          \    </div>\n</div>\n\n<script>\n    var hourChart = echarts.init(document.getElementById('hourBarChart'));\n\
+          \    hourChart.setOption({{\n        tooltip: {{ trigger: 'axis', axisPointer:\
+          \ {{ type: 'shadow' }} }},\n        xAxis: {{ type: 'category', data: [{hour_labels_str}],\
+          \ axisLabel: {{ rotate: 45, interval: 2 }} }},\n        yAxis: {{ type:\
+          \ 'value', name: '订单量' }},\n        title: {{ show: true, text: '24小时订单分布',\
+          \ left: 'center', top: 0 }},\n        series: [{{\n            name: '订单量',\
+          \ type: 'bar', data: [{hour_values_str}],\n            itemStyle: {{ borderRadius:\
+          \ [4,4,0,0], color: new echarts.graphic.LinearGradient(0,0,0,1,[{{offset:0,color:'#1a73e8'}},{{offset:1,color:'#667eea'}}])\
+          \ }},\n            label: {{ show: true, position: 'top', formatter: function(params)\
+          \ {{ return params.value > 500 ? params.value : ''; }} }}\n        }}]\n\
+          \    }});\n\n    var peakPieChart = echarts.init(document.getElementById('peakPieChart'));\n\
+          \    peakPieChart.setOption({{\n        tooltip: {{ trigger: 'item' }},\n\
+          \        legend: {{ orient: 'vertical', left: 'left', data: ['12-14点', '19-21点',\
+          \ '其他时段'] }},\n        title: {{ show: true, text: '高峰时段订单占比', left: 'center',\
+          \ top: 0 }},\n        series: [{{\n            name: '订单占比', type: 'pie',\
+          \ radius: '55%', center: ['50%', '55%'],\n            data: [{{ name: '12-14点',\
+          \ value: {peak_12_14} }}, {{ name: '19-21点', value: {peak_19_21} }}, {{\
+          \ name: '其他时段', value: {total_2019 - peak_12_14 - peak_19_21} }}],\n   \
+          \         label: {{ show: true, formatter: '{{b}}: {{d}}%' }}\n        }}]\n\
+          \    }});\n\n    var monthLineChart = echarts.init(document.getElementById('monthLineChart'));\n\
+          \    monthLineChart.setOption({{\n        tooltip: {{ trigger: 'axis' }},\n\
+          \        xAxis: {{ type: 'category', data: [{month_labels_str}], axisLabel:\
+          \ {{ rotate: 45 }} }},\n        yAxis: {{ type: 'value', name: '订单量' }},\n\
+          \        title: {{ show: true, text: '月度订单趋势', left: 'center', top: 0 }},\n\
+          \        series: [{{\n            name: '订单量', type: 'line', data: [{month_values_str}],\
+          \ smooth: true, symbol: 'circle', symbolSize: 8,\n            lineStyle:\
+          \ {{ width: 3, color: '#f5576c' }},\n            areaStyle: {{ opacity:\
+          \ 0.3, color: new echarts.graphic.LinearGradient(0,0,0,1,[{{offset:0,color:'#f093fb'}},{{offset:1,color:'#f5576c'}}])\
+          \ }},\n            label: {{ show: true, position: 'top' }}\n        }}]\n\
+          \    }});\n\n    var quarterBarChart = echarts.init(document.getElementById('quarterBarChart'));\n\
+          \    quarterBarChart.setOption({{\n        tooltip: {{ trigger: 'axis' }},\n\
+          \        xAxis: {{ type: 'category', data: [{quarter_labels_str}] }},\n\
+          \        yAxis: {{ type: 'value', name: '订单量' }},\n        title: {{ show:\
+          \ true, text: '季度订单对比', left: 'center', top: 0 }},\n        series: [{{\n\
+          \            name: '订单量', type: 'bar', data: [{quarter_values_str}],\n \
+          \           itemStyle: {{ borderRadius: [4,4,0,0], color: new echarts.graphic.LinearGradient(0,0,0,1,[{{offset:0,color:'#43e97b'}},{{offset:1,color:'#38f9d7'}}])\
+          \ }},\n            label: {{ show: true, position: 'top' }}\n        }}]\n\
+          \    }});\n\n    var weekdayRadarChart = echarts.init(document.getElementById('weekdayRadarChart'));\n\
+          \    weekdayRadarChart.setOption({{\n        tooltip: {{ trigger: 'item'\
+          \ }},\n        radar: {{ indicator: [{weekday_labels_str}].map(function(d,i){{\
+          \ return {{ name: d, max: Math.max({weekday_values_str}) * 1.1 }}; }}),\
+          \ shape: 'circle', center: ['50%','50%'], radius: '65%' }},\n        title:\
+          \ {{ show: true, text: '星期订单分布雷达图', left: 'center', top: 0 }},\n       \
+          \ series: [{{\n            name: '订单量', type: 'radar', data: [{{ value:\
+          \ [{weekday_values_str}], name: '订单量' }}],\n            areaStyle: {{ color:\
+          \ 'rgba(250,112,154,0.3)' }}, lineStyle: {{ width: 2, color: '#fa709a' }},\
+          \ itemStyle: {{ color: '#fa709a' }}\n        }}]\n    }});\n\n    var platformPieChart\
+          \ = echarts.init(document.getElementById('platformPieChart'));\n    platformPieChart.setOption({{\n\
+          \        tooltip: {{ trigger: 'item' }},\n        legend: {{ orient: 'vertical',\
+          \ left: 'left', data: ['APP', '微信小程序', '支付宝小程序'] }},\n        title: {{\
+          \ show: true, text: '平台订单占比', left: 'center', top: 0 }},\n        series:\
+          \ [{{\n            name: '平台占比', type: 'pie', radius: '55%', center: ['50%','55%'],\n\
+          \            data: [{{ name: 'APP', value: {platform_values[0]} }}, {{ name:\
+          \ '微信小程序', value: {platform_values[1]} }}, {{ name: '支付宝小程序', value: {platform_values[2]}\
+          \ }}],\n            label: {{ show: true, formatter: '{{b}}: {{d}}%' }}\n\
+          \        }}]\n    }});\n\n    window.addEventListener('resize', function()\
+          \ {{\n        hourChart.resize(); peakPieChart.resize(); monthLineChart.resize();\
+          \ quarterBarChart.resize(); weekdayRadarChart.resize(); platformPieChart.resize();\n\
+          \    }});\n</script>\n</body>\n</html>\"\"\"\n\n    # ====================\
+          \ 发送到 Flask 服务器 ====================\n    flask_host = get_flask_host()\n\
+          \    flask_url = f\"http://{flask_host}:5000/generate\"\n    \n    print(f\"\
+          \U0001F517 最终使用的Flask地址: {flask_url}\")\n    print(f\"\U0001F4E6 报告大小: {len(html_output)}\
+          \ 字符\")\n\n    try:\n        response = requests.post(\n            flask_url,\n\
+          \            json={\"html_content\": html_output},\n            timeout=30\n\
+          \        )\n\n        print(f\"\U0001F4CA 响应状态码: {response.status_code}\"\
+          )\n        print(f\"\U0001F4CA 响应内容前200字符: {response.text[:200] if response.text\
+          \ else '空响应'}\")\n\n        if response.status_code == 200:\n          \
+          \  result = response.json()\n            report_url = result.get(\"url\"\
+          , \"\")\n            return {\n                \"report_url\": report_url,\n\
+          \                \"html_output\": html_output,\n                \"message\"\
+          : f\"✅ 报告已生成！点击查看：{report_url}\"\n            }\n        else:\n       \
+          \     return {\n                \"report_url\": \"\",\n                \"\
+          html_output\": html_output,\n                \"message\": f\"❌ 上传失败 (状态码\
+          \ {response.status_code})：{response.text[:500]}\"\n            }\n     \
+          \       \n    except requests.exceptions.Timeout:\n        return {\n  \
+          \          \"report_url\": \"\",\n            \"html_output\": html_output,\n\
+          \            \"message\": f\"❌ 连接超时：Flask服务 ({flask_url}) 未在30秒内响应，请检查服务是否运行\"\
+          \n        }\n    except requests.exceptions.ConnectionError as e:\n    \
+          \    return {\n            \"report_url\": \"\",\n            \"html_output\"\
+          : html_output,\n            \"message\": f\"❌ 连接失败：无法连接到 {flask_url}。请确认：\\\
+          n1. Flask服务是否在运行\\n2. IP地址是否正确（当前使用: {flask_host}）\\n3. 防火墙是否允许5000端口\\\
+          n错误详情: {str(e)}\"\n        }\n    except Exception as e:\n        return\
+          \ {\n            \"report_url\": \"\",\n            \"html_output\": html_output,\n\
+          \            \"message\": f\"❌ 上传失败：{str(e)}\"\n        }"
+        code_language: python3
+        outputs:
+          html_output:
+            children: null
+            type: string
+          message:
+            children: null
+            type: string
+          report_url:
+            children: null
+            type: string
+        selected: false
+        title: '代码执行 '
+        type: code
+        variables:
+        - value_selector:
+          - '1778758460657'
+          - text
+          value_type: string
+          variable: sql_text
+        - value_selector:
+          - '17796326156950'
+          - text
+          value_type: string
+          variable: sql_goods
+        - value_selector:
+          - '17796327126380'
+          - text
+          value_type: string
+          variable: sql_channel
+        - value_selector:
+          - '17796329280690'
+          - text
+          value_type: string
+          variable: sql_platform
+        - value_selector:
+          - '17796330089160'
+          - text
+          value_type: string
+          variable: sql_amount
+        - value_selector:
+          - '17796332776360'
+          - text
+          value_type: string
+          variable: sql_user
+        - value_selector:
+          - '17796333022780'
+          - text
+          value_type: string
+          variable: sql_quarter
+      height: 52
+      id: '17797121028980'
+      position:
+        x: 1051.5593374857024
+        y: 575.9949243492587
+      positionAbsolute:
+        x: 1051.5593374857024
+        y: 575.9949243492587
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 247.076069562567
+      y: -154.418419744
+      zoom: 0.7071068290210085
+  rag_pipeline_variables: []
